@@ -10,12 +10,15 @@ import org.testng.annotations.BeforeMethod;
  */
 public class TestData {
     public static WebDriver driver;
-    private static final String URL_MAIN_PAGE = "catalog.onliner.by";
+    private static final String URL_MAIN_PAGE = "https://catalog.onliner.by/";
 
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+      /*  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);*/
         driver.get(URL_MAIN_PAGE);
     }
 
