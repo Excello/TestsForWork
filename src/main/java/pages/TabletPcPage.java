@@ -19,7 +19,6 @@ public class TabletPcPage {
     }
 
     public static void CheckTabletPcProducts (WebDriver driver) {
-//        Assert.assertEquals("Мобильные телефоны присутсвуют", driver.findElement(MOBILE_PAGE_ITEMS).isDisplayed(), true);
         driver.findElement(TABLET_PC_PAGE_ITEMS).isDisplayed();
     }
 
