@@ -8,10 +8,15 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class HeadphonesPage {
+    private WebDriver driver;
     private static By HEADPHONES_PAGE_ITEMS = By.id("schema-products");
     private static By HEADPHONES_PAGE_TITLE = By.cssSelector(".schema-header__title");
     private static By HEADPHONES_PAGE_FILTERS = By.id("schema-filter");
     private static By HEADPHONES_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
+
+    public HeadphonesPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
 
     public static boolean HeadphonesPageIsOpened (WebDriver driver) {

@@ -8,10 +8,15 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class ActionCameraPage {
+    private WebDriver driver;
     private static By ACTION_CAMERA_PAGE_ITEMS = By.id("schema-products");
     private static By ACTION_CAMERA_PAGE_TITLE = By.cssSelector(".schema-header__title");
     private static By ACTION_CAMERA_PAGE_FILTERS = By.id("schema-filter");
     private static By ACTION_CAMERA_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
+
+    public ActionCameraPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
 
     public static boolean ActionCameraPageIsOpened (WebDriver driver) {

@@ -8,10 +8,15 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class MobilePage {
+    private WebDriver driver;
     private static By MOBILE_PAGE_ITEMS = By.id("schema-products");
     private static By MOBILE_PAGE_TITLE = By.cssSelector(".schema-header__title");
     private static By MOBILE_PAGE_FILTERS = By.id("schema-filter");
     private static By MOBILE_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
+
+    public MobilePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
 
     public static boolean MobilePageIsOpened (WebDriver driver) {

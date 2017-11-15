@@ -10,7 +10,7 @@ public class CatalogVerifying extends TestData {
 
     @Test(priority=0)
     public void MobileCatalogTest() {
-        CatalogPage.GoToMobilePage(driver);
+        CatalogNavigatorPage.goToMobilePage(MobilePage);
         MobilePage.MobilePageIsOpened(driver);
         MobilePage.CheckMobileProducts(driver);
         MobilePage.CheckFilterSection(driver);
@@ -18,7 +18,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=1)
     public void TabletPcCatalogTest() {
-        CatalogPage.GoToTabletPcPage(driver);
+        CatalogNavigatorPage.goToTabletPcPage(driver);
         TabletPcPage.TabletPcPageIsOpened(driver);
         TabletPcPage.CheckTabletPcProducts(driver);
         TabletPcPage.CheckFilterSection(driver);
@@ -26,7 +26,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=2)
     public void NotebookCatalogTest() {
-        CatalogPage.GoToNotebookPage(driver);
+        CatalogNavigatorPage.goToNotebookPage(driver);
         NotebookPage.NotebookPageIsOpened(driver);
         NotebookPage.CheckNotebookProducts(driver);
         NotebookPage.CheckFilterSection(driver);
@@ -34,7 +34,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=3)
     public void TvCatalogTest() {
-        CatalogPage.GoToTvPage(driver);
+        CatalogNavigatorPage.goToTvPage(driver);
         TvPage.TvPageIsOpened(driver);
         TvPage.CheckTvProducts(driver);
         TvPage.CheckFilterSection(driver);
@@ -42,7 +42,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=4)
     public void PhotoCatalogTest() {
-        CatalogPage.GoToPhotoPage(driver);
+        CatalogNavigatorPage.goToPhotoPage(driver);
         PhotoPage.PhotoPageIsOpened(driver);
         PhotoPage.CheckPhotoProducts(driver);
         PhotoPage.CheckFilterSection(driver);
@@ -50,7 +50,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=5)
     public void TiresCatalogTest() {
-        CatalogPage.GoToTiresPage(driver);
+        CatalogNavigatorPage.goToTiresPage(driver);
         TiresPage.TiresPageIsOpened(driver);
         TiresPage.CheckTiresProducts(driver);
         TiresPage.CheckFilterSection(driver);
@@ -58,7 +58,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=6)
     public void RefrigeratorCatalogTest() {
-        CatalogPage.GoToRefrigeratorPage(driver);
+        CatalogNavigatorPage.goToRefrigeratorPage(driver);
         RefrigeratorPage.RefrigeratorPageIsOpened(driver);
         RefrigeratorPage.CheckRefrigeratorProducts(driver);
         RefrigeratorPage.CheckFilterSection(driver);
@@ -66,7 +66,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=7)
     public void HeaterCatalogTest() {
-        CatalogPage.GoToHeaterPage(driver);
+        CatalogNavigatorPage.goToHeaterPage(driver);
         HeaterPage.HeaterPageIsOpened(driver);
         HeaterPage.CheckHeaterProducts(driver);
         HeaterPage.CheckFilterSection(driver);
@@ -74,7 +74,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=8)
     public void DisplayCatalogTest() {
-        CatalogPage.GoToDisplayPage(driver);
+        CatalogNavigatorPage.goToDisplayPage(driver);
         DisplayPage.DisplayIsOpened(driver);
         DisplayPage.CheckDisplayProducts(driver);
         DisplayPage.CheckFilterSection(driver);
@@ -82,7 +82,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=9)
     public void HeadphonesCatalogTest() {
-        CatalogPage.GoToHeadphonesPage(driver);
+        CatalogNavigatorPage.goToHeadphonesPage(driver);
         HeadphonesPage.HeadphonesPageIsOpened(driver);
         HeadphonesPage.CheckHeadphonesProducts(driver);
         HeadphonesPage.CheckFilterSection(driver);
@@ -90,7 +90,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=10)
     public void DesktopPcCatalogTest() {
-        CatalogPage.GoToDesktopPcPage(driver);
+        CatalogNavigatorPage.goToDesktopPcPage(driver);
         DesktopPcPage.DesktopPcPageIsOpened(driver);
         DesktopPcPage.CheckDesktopPcProducts(driver);
         DesktopPcPage.CheckFilterSection(driver);
@@ -98,7 +98,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=11)
     public void ActionCameraCatalogTest() {
-        CatalogPage.GoToActionCameraPage(driver);
+        CatalogNavigatorPage.goToActionCameraPage(driver);
         ActionCameraPage.ActionCameraPageIsOpened(driver);
         ActionCameraPage.CheckActionCameraProducts(driver);
         ActionCameraPage.CheckFilterSection(driver);
@@ -108,7 +108,7 @@ public class CatalogVerifying extends TestData {
    /* Impossible to find on page these catalogs
     @Test
     public void PrintersCatalogTest() {
-        CatalogPage.GoToPrinterPage(driver);
+        CatalogNavigatorPage.GoToPrinterPage(driver);
         PrintersPage.PrintersPageIsOpened(driver);
         PrintersPage.CheckPrintersProducts(driver);
         PrintersPage.CheckFilterSection(driver);
@@ -116,7 +116,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test
     public void ParfumeCatalogTest() {
-        CatalogPage.GoToParfumePage(driver);
+        CatalogNavigatorPage.GoToParfumePage(driver);
         ParfumePage.ParfumePageIsOpened(driver);
         ParfumePage.CheckParfumeProducts(driver);
         ParfumePage.CheckFilterSection(driver);
@@ -124,7 +124,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test
     public void HouseCatalogTest() {
-        CatalogPage.GoToHousePage(driver);
+        CatalogNavigatorPage.GoToHousePage(driver);
         HousePage.HousePageIsOpened(driver);
         HousePage.CheckHouseProducts(driver);
         HousePage.CheckFilterSection(driver);

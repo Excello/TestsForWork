@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
  * Created by Englich on 11.11.2017.
  *
  */
-public class CatalogPage {
+public class CatalogNavigatorPage {
+    private WebDriver driver;
     private static By MOBILE_PAGE_TAB = By.linkText("Мобильные телефоны");
     private static By TABLET_PC_PAGE_TAB = By.linkText("Планшеты");
     private static By NOTEBOOK_PAGE_TAB = By.linkText("Ноутбуки");
@@ -20,58 +21,75 @@ public class CatalogPage {
     private static By HEADPHONES_PAGE_TAB = By.linkText("Наушники и гарнитуры");
     private static By DESKTOP_PC_PAGE_TAB = By.linkText("Компьютеры");
     private static By ACTION_CAMERA_PAGE_TAB = By.linkText("Экшен-камеры");
-
  /* Impossible to find on page
     private static By PRINTERS_PAGE_TAB = By.linkText("Принтеры и МФУ");
     private static By PARFUME_PAGE_TAB = By.linkText("Парфюмерия");
     private static By HOUSE_PAGE_TAB = By.linkText("Дома, коттеджи");*/
 
-    public static void GoToMobilePage(WebDriver driver) {
+    public CatalogNavigatorPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public MobilePage goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
+        return new MobilePage(driver);
     }
 
-    public static void GoToTabletPcPage(WebDriver driver) {
+    public TabletPcPage goToTabletPcPage() {
         driver.findElement(TABLET_PC_PAGE_TAB).click();
+        return new TabletPcPage(driver);
     }
 
-    public static void GoToNotebookPage(WebDriver driver) {
+    public NotebookPage goToNotebookPage() {
         driver.findElement(NOTEBOOK_PAGE_TAB).click();
+        return new NotebookPage(driver);
     }
 
-    public static void GoToTvPage(WebDriver driver) {
+    public TvPage goToTvPage()
+    {
         driver.findElement(TV_PAGE_TAB).click();
+        return new TvPage(driver);
     }
 
-    public static void GoToPhotoPage(WebDriver driver) {
+    public PhotoPage goToPhotoPage()
+    {
         driver.findElement(PHOTO_PAGE_TAB).click();
+        return new PhotoPage(driver);
     }
 
-    public static void GoToTiresPage(WebDriver driver) {
+    public TiresPage goToTiresPage() {
         driver.findElement(TIRES_PAGE_TAB).click();
+        return new TiresPage(driver);
     }
 
-    public static void GoToRefrigeratorPage(WebDriver driver) {
+    public RefrigeratorPage goToRefrigeratorPage() {
         driver.findElement(REFRIGERATOR_PAGE_TAB).click();
+        return new RefrigeratorPage(driver);
     }
 
-    public static void GoToHeaterPage(WebDriver driver) {
+    public HeaterPage goToHeaterPage() {
         driver.findElement(HEATER_PAGE_TAB).click();
+        return new HeaterPage(driver);
     }
 
-    public static void GoToDisplayPage(WebDriver driver) {
+    public DisplayPage goToDisplayPage() {
         driver.findElement(DISPLAY_PAGE_TAB).click();
+        return new DisplayPage(driver);
     }
 
-    public static void GoToHeadphonesPage(WebDriver driver) {
+    public HeadphonesPage goToHeadphonesPage() {
         driver.findElement(HEADPHONES_PAGE_TAB).click();
+        return new HeadphonesPage(driver);
     }
 
-    public static void GoToDesktopPcPage(WebDriver driver) {
+    public DesktopPcPage goToDesktopPcPage() {
         driver.findElement(DESKTOP_PC_PAGE_TAB).click();
+        return new DesktopPcPage(driver);
     }
 
-    public static void GoToActionCameraPage(WebDriver driver) {
+    public ActionCameraPage goToActionCameraPage() {
         driver.findElement(ACTION_CAMERA_PAGE_TAB).click();
+        return new ActionCameraPage(driver);
     }
 
 /*    public static void GoToPrinterPage(WebDriver driver) {

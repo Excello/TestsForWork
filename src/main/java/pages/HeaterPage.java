@@ -8,10 +8,15 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class HeaterPage {
+    private WebDriver driver;
     private static By HEATER_PAGE_ITEMS = By.id("schema-products");
     private static By HEATER_PAGE_TITLE = By.cssSelector(".schema-header__title");
     private static By HEATER_PAGE_FILTERS = By.id("schema-filter");
     private static By HEATER_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
+
+    public HeaterPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
 
     public static boolean HeaterPageIsOpened (WebDriver driver) {
