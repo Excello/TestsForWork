@@ -13,21 +13,10 @@ public class PrintersPage {
     private static By PRINTERS_PAGE_FILTERS = By.id("schema-filter");
     private static By PRINTERS_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
-
+    public PrintersPage() {
+        super();
+    }
     public static boolean PrintersPageIsOpened (WebDriver driver) {
         return driver.findElement(PRINTERS_PAGE_TITLE).getText().contains("Принтеры и МФУ");
     }
-
-    public static void CheckPrintersProducts (WebDriver driver) {
-        driver.findElement(PRINTERS_PAGE_ITEMS).isDisplayed();
-    }
-
-    public static void CheckFilterSection (WebDriver driver) {
-        driver.findElement(PRINTERS_PAGE_FILTERS).isDisplayed();
-    }
-
-    public static void AnyFilterIsExisted (WebDriver driver) {
-        driver.findElement(PRINTERS_PAGE_ANY_FILTER).isDisplayed();
-    }
-
 }

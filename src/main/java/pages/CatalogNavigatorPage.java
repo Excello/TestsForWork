@@ -26,70 +26,69 @@ public class CatalogNavigatorPage {
     private static By PARFUME_PAGE_TAB = By.linkText("Парфюмерия");
     private static By HOUSE_PAGE_TAB = By.linkText("Дома, коттеджи");*/
 
-    public CatalogNavigatorPage(WebDriver driver) {
-        this.driver = driver;
+    public CatalogNavigatorPage() {
     }
 
     public MobilePage goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
-        return new MobilePage(driver);
+        return new MobilePage();
     }
 
     public TabletPcPage goToTabletPcPage() {
         driver.findElement(TABLET_PC_PAGE_TAB).click();
-        return new TabletPcPage(driver);
+        return new TabletPcPage();
     }
 
     public NotebookPage goToNotebookPage() {
         driver.findElement(NOTEBOOK_PAGE_TAB).click();
-        return new NotebookPage(driver);
+        return new NotebookPage();
     }
 
     public TvPage goToTvPage()
     {
         driver.findElement(TV_PAGE_TAB).click();
-        return new TvPage(driver);
+        return new TvPage();
     }
 
     public PhotoPage goToPhotoPage()
     {
         driver.findElement(PHOTO_PAGE_TAB).click();
-        return new PhotoPage(driver);
+        return new PhotoPage();
     }
 
     public TiresPage goToTiresPage() {
         driver.findElement(TIRES_PAGE_TAB).click();
-        return new TiresPage(driver);
+        return new TiresPage();
     }
 
     public RefrigeratorPage goToRefrigeratorPage() {
         driver.findElement(REFRIGERATOR_PAGE_TAB).click();
-        return new RefrigeratorPage(driver);
+        return new RefrigeratorPage();
     }
 
     public HeaterPage goToHeaterPage() {
         driver.findElement(HEATER_PAGE_TAB).click();
-        return new HeaterPage(driver);
+        return new HeaterPage();
     }
 
     public DisplayPage goToDisplayPage() {
         driver.findElement(DISPLAY_PAGE_TAB).click();
-        return new DisplayPage(driver);
+        return new DisplayPage();
     }
 
     public HeadphonesPage goToHeadphonesPage() {
         driver.findElement(HEADPHONES_PAGE_TAB).click();
-        return new HeadphonesPage(driver);
+        return new HeadphonesPage();
     }
 
     public DesktopPcPage goToDesktopPcPage() {
         driver.findElement(DESKTOP_PC_PAGE_TAB).click();
-        return new DesktopPcPage(driver);
+        return new DesktopPcPage();
     }
 
     public ActionCameraPage goToActionCameraPage() {
         driver.findElement(ACTION_CAMERA_PAGE_TAB).click();
-        return new ActionCameraPage(driver);
+        return new ActionCameraPage();
     }
 
 /*    public static void GoToPrinterPage(WebDriver driver) {

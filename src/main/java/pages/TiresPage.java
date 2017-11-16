@@ -9,30 +9,13 @@ import org.openqa.selenium.WebDriver;
  */
 public class TiresPage {
     private WebDriver driver;
-    private static By TIRES_PAGE_ITEMS = By.id("schema-products");
     private static By TIRES_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    private static By TIRES_PAGE_FILTERS = By.id("schema-filter");
-    private static By TIRES_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
-    public TiresPage(WebDriver driver) {
-        this.driver = driver;
+    public TiresPage() {
+        super();
     }
-
 
     public static boolean TiresPageIsOpened (WebDriver driver) {
         return driver.findElement(TIRES_PAGE_TITLE).getText().contains("Автомобильные шины");
     }
-
-    public static void CheckTiresProducts (WebDriver driver) {
-        driver.findElement(TIRES_PAGE_ITEMS).isDisplayed();
-    }
-
-    public static void CheckFilterSection (WebDriver driver) {
-        driver.findElement(TIRES_PAGE_FILTERS).isDisplayed();
-    }
-
-    public static void AnyFilterIsExisted (WebDriver driver) {
-        driver.findElement(TIRES_PAGE_ANY_FILTER).isDisplayed();
-    }
-
 }
