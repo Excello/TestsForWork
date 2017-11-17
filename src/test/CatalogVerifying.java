@@ -99,8 +99,8 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=11)
     public void ActionCameraCatalogTest() {
-        CatalogNavigatorPage.goToActionCameraPage();
-        ActionCameraPage.ActionCameraPageIsOpened(driver);
+        ActionCameraPage actionCameraPage = new CatalogNavigatorPage().goToActionCameraPage();
+        ActionCameraPage actionCameraPageResult = new ActionCameraPage().isActionCameraPageOpened();
         ActionCameraPage.CheckActionCameraProducts(driver);
         ActionCameraPage.CheckFilterSection(driver);
         ActionCameraPage.AnyFilterIsExisted(driver);

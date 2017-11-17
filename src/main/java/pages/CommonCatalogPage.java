@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class CommonCatalogPage {
-    private WebDriver driver;
+    public static WebDriver driver;
     private static By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
     private static By COMMON_CATALOG_FILTERS = By.id("schema-filter");
     private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");

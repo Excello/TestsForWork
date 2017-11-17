@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 
@@ -10,7 +9,6 @@ import org.testng.Assert;
  *
  */
 public class ActionCameraPage extends CommonCatalogPage{
-    private WebDriver driver;
     private static By ACTION_CAMERA_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public ActionCameraPage() {
