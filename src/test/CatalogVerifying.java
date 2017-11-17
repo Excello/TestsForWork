@@ -11,8 +11,9 @@ public class CatalogVerifying extends TestData {
     @Test(priority=0)
     public void MobileCatalogTest() {
         CatalogNavigatorPage.goToMobilePage(MobilePage);
-        MobilePage.MobilePageIsOpened(driver);
-        MobilePage.CheckMobileProducts(driver);
+        MobilePage.MobilePageIsOpened();
+        MobilePage mb = new MobilePage();
+
         MobilePage.CheckFilterSection(driver);
         MobilePage.AnyFilterIsExisted(driver);
     }
@@ -98,7 +99,7 @@ public class CatalogVerifying extends TestData {
     }
     @Test(priority=11)
     public void ActionCameraCatalogTest() {
-        CatalogNavigatorPage.goToActionCameraPage(driver);
+        CatalogNavigatorPage.goToActionCameraPage();
         ActionCameraPage.ActionCameraPageIsOpened(driver);
         ActionCameraPage.CheckActionCameraProducts(driver);
         ActionCameraPage.CheckFilterSection(driver);

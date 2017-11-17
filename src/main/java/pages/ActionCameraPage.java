@@ -17,7 +17,8 @@ public class ActionCameraPage extends CommonCatalogPage{
         super();
     }
 
-    public boolean isActionCameraPageOpened () {
-        return Assert.assertTrue(driver.findElement(ACTION_CAMERA_PAGE_TITLE).getText().contains(asd));
+    public ActionCameraPage isActionCameraPageOpened () {
+        Assert.assertTrue(driver.findElement(ACTION_CAMERA_PAGE_TITLE).getText().contains("Экшен-камеры"));
+        return new ActionCameraPage();
     }
 }
