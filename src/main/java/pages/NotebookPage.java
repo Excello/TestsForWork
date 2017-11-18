@@ -1,21 +1,21 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 /**
  * Created by Englich on 11.11.2017.
  *
  */
-public class NotebookPage {
-    private WebDriver driver;
+public class NotebookPage extends CommonCatalogPage {
     private static By NOTEBOOK_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public NotebookPage() {
         super();
     }
 
-    public static boolean NotebookPageIsOpened (WebDriver driver) {
-        return driver.findElement(NOTEBOOK_PAGE_TITLE).getText().contains("Ноутбуки");
+    public NotebookPage isNotebookPageOpened () {
+        Assert.assertTrue(driver.findElement(NOTEBOOK_PAGE_TITLE).getText().contains("Ноутбуки"));
+        return new NotebookPage();
     }
 }
