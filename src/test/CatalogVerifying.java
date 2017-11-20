@@ -3,6 +3,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
+import java.util.NoSuchElementException;
+
 /**
  * Created by Englich on 11.11.2017.
  *
@@ -16,7 +18,12 @@ public class CatalogVerifying extends TestData {
     public void MobileCatalogTest() {
         MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
-        Assert.assertTrue(commonCatalogPagePageItems.isProductsDisplayed(), "Page is opened");
+        try {
+            Assert.assertTrue(commonCatalogPagePageItems.isProductsDisplayed());
+        } catch (NoSuchElementException nsee {
+            System.out.println("NoElement");
+        }
+
         commonCatalogPageItemsFilters.isFilterSectionDisplayed();
         commonCatalogPageAnyFilter.isAnyFilterExisted();
     }
