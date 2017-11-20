@@ -1,4 +1,5 @@
 import core.TestData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -15,7 +16,7 @@ public class CatalogVerifying extends TestData {
     public void MobileCatalogTest() {
         MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
-        commonCatalogPagePageItems.isProductsDisplayed();
+        Assert.assertTrue(commonCatalogPagePageItems.isProductsDisplayed(), "Page is opened");
         commonCatalogPageItemsFilters.isFilterSectionDisplayed();
         commonCatalogPageAnyFilter.isAnyFilterExisted();
     }
