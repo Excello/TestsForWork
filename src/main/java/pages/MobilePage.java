@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 /**
@@ -10,12 +11,12 @@ import org.testng.Assert;
 public class MobilePage extends CommonCatalogPage {
     private static By MOBILE_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
-    public MobilePage() {
-        super();
+    public MobilePage(WebDriver driver) {
+        super(driver);
     }
 
     public MobilePage isMobilePageOpened () {
         Assert.assertTrue(driver.findElement(MOBILE_PAGE_TITLE).getText().contains("Мобильные телефоны"));
-        return new MobilePage();
+        return new MobilePage(driver);
     }
 }

@@ -11,7 +11,7 @@ public class PrintersPage extends CommonCatalogPage {
     private static By PRINTERS_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public PrintersPage() {
-        super();
+        super(driver);
     }
 
     public PrintersPage isPrintersPageOpened () {

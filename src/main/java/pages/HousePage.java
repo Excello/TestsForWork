@@ -11,7 +11,7 @@ public class HousePage extends CommonCatalogPage {
     private static By HOUSE_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public HousePage() {
-        super();
+        super(driver);
     }
 
     public HousePage isHousePageOpened () {

@@ -10,21 +10,21 @@ public class CommonCatalogPage {
     private static By COMMON_CATALOG_FILTERS = By.id("schema-filter");
     private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
-    public CommonCatalogPage() {
+    public CommonCatalogPage(WebDriver driver) {
     }
 
     public CommonCatalogPage isProductsDisplayed () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
-        return new CommonCatalogPage();
+        return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isFilterSectionDisplayed () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
-        return new CommonCatalogPage();
+        return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isAnyFilterExisted () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
-        return new CommonCatalogPage();
+        return new CommonCatalogPage(driver);
     }
 }

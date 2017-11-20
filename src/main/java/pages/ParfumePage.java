@@ -11,7 +11,7 @@ public class ParfumePage extends CommonCatalogPage {
     private static By PARFUME_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public ParfumePage() {
-        super();
+        super(driver);
     }
 
     public ParfumePage isParfumePageOpened () {
