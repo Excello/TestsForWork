@@ -19,6 +19,7 @@ public class CatalogVerifying extends TestData {
         commonCatalogPageItemsFilters.isFilterSectionDisplayed();
         commonCatalogPageAnyFilter.isAnyFilterExisted();
     }
+
     @Test(priority=1)
     public void TabletPcCatalogTest() {
         TabletPcPage tabletPcPage = new CatalogNavigatorPage().goToTabletPcPage();
