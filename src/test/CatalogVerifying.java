@@ -1,5 +1,4 @@
 import core.TestData;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -10,24 +9,20 @@ import java.util.NoSuchElementException;
  *
  */
 public class CatalogVerifying extends TestData {
-    private CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-    private CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-    private CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
+/*     CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
+     CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
+     CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();*/
 
-    @Test(priority=0)
+    @Test(priority=1)
     public void MobileCatalogTest() {
         MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
-        try {
-            Assert.assertTrue(commonCatalogPagePageItems.isProductsDisplayed());
-        } catch (NoSuchElementException nsee {
-            System.out.println("NoElement");
-        }
+        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
+        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
+        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
 
-        commonCatalogPageItemsFilters.isFilterSectionDisplayed();
-        commonCatalogPageAnyFilter.isAnyFilterExisted();
     }
-    @Test(priority=1)
+ /*   @Test(priority=1)
     public void TabletPcCatalogTest() {
         TabletPcPage tabletPcPage = new CatalogNavigatorPage(driver).goToTabletPcPage();
         TabletPcPage tabletPcPageResult = new TabletPcPage(driver).isTabletPcPageOpened();
@@ -114,7 +109,7 @@ public class CatalogVerifying extends TestData {
         commonCatalogPagePageItems.isProductsDisplayed();
         commonCatalogPageItemsFilters.isFilterSectionDisplayed();
         commonCatalogPageAnyFilter.isAnyFilterExisted();
-    }
+    }*/
 
    /* Impossible to find on page these catalogs
     @Test

@@ -14,7 +14,8 @@ import java.util.Set;
  * Created by Englich on 11.11.2017.
  */
 public class TestData {
-    public WebDriver driver = new WebDriver() {
+    public WebDriver driver = new WebDriver()
+    {
         @Override
         public void get(String s) {
 
