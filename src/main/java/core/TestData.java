@@ -85,6 +85,7 @@ public class TestData {
 
     @BeforeMethod
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "D://automation/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
       /*  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

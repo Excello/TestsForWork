@@ -80,7 +80,9 @@ public class CommonCatalogPage {
     private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
     public CommonCatalogPage(WebDriver driver) {
+        this.driver = driver;
     }
+
 
     public CommonCatalogPage isProductsDisplayed () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());

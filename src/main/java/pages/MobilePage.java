@@ -15,6 +15,7 @@ public class MobilePage extends CommonCatalogPage {
         super(driver);
     }
 
+
     public MobilePage isMobilePageOpened () {
         Assert.assertTrue(driver.findElement(MOBILE_PAGE_TITLE).getText().contains("Мобильные телефоны"));
         return new MobilePage(driver);
