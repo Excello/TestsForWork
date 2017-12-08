@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  *
  */
 public class CatalogVerifying extends TestData {
-    @Test(priority=1)
+    @Test(priority=0)
     public void MobileCatalogTest() {
         MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
@@ -21,10 +21,10 @@ public class CatalogVerifying extends TestData {
     @Test(priority=1)
     public void TabletPcCatalogTest() {
         TabletPcPage tabletPcPage = new CatalogNavigatorPage(driver).goToTabletPcPage();
-        TabletPcPage tabletPcPageResult = new TabletPcPage(driver).isTabletPcPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
+        tabletPcPage.isTabletPcPageOpened();
+        tabletPcPage.isProductsDisplayed();
+        tabletPcPage.isFilterSectionDisplayed();
+        tabletPcPage.isAnyFilterExisted();
     }
     @Test(priority=2)
     public void NotebookCatalogTest() {
