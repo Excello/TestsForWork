@@ -1,17 +1,20 @@
+/*
 package pages;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+*/
 /**
  * Created by Englich on 11.11.2017.
  *
- */
+ *//*
+
 public class HousePage extends CommonCatalogPage {
     private static By HOUSE_PAGE_TITLE = By.cssSelector(".schema-header__title");
 
     public HousePage() {
-        super();
+        super(driver);
     }
 
     public HousePage isHousePageOpened () {
@@ -19,3 +22,4 @@ public class HousePage extends CommonCatalogPage {
         return new HousePage();
     }
 }
+*/
