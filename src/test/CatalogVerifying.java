@@ -2,20 +2,20 @@ import core.TestData;
 import org.testng.annotations.Test;
 import pages.*;
 
-import java.util.NoSuchElementException;
-
 /**
  * Created by Englich on 11.11.2017.
  *
  */
 public class CatalogVerifying extends TestData {
-    @Test(priority=0)
+
+    @Test
     public void MobileCatalogTest() {
-        MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
+        CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver).checkCatalogPageIsOpened();
+        /*MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
         CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
+        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();*/
 
     }
     @Test(priority=1)

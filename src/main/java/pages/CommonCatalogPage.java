@@ -83,19 +83,26 @@ public class CommonCatalogPage {
         this.driver = driver;
     }
 
-
-    public CommonCatalogPage isProductsDisplayed () {
+    public CommonCatalogPage checkCatalogPageIsOpened(CatalogNavigatorPage catalogNavigatorPage, ActionCameraPage actionCameraPage) {
+        catalogNavigatorPage.goToActionCameraPage(driver);
+        actionCameraPage.isActionCameraPageOpened(driver);
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
+        return new CommonCatalogPage(driver);
+    }
+    public CommonCatalogPage isProductsDisplayed () {
+
         return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isFilterSectionDisplayed () {
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
+
         return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isAnyFilterExisted () {
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
+
         return new CommonCatalogPage(driver);
     }
 }
