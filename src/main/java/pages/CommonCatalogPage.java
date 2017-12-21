@@ -12,7 +12,6 @@ public class CommonCatalogPage {
     public WebDriver driver = new WebDriver() {
         @Override
         public void get(String s) {
-
         }
 
         @Override
@@ -83,26 +82,26 @@ public class CommonCatalogPage {
         this.driver = driver;
     }
 
-    public CommonCatalogPage checkCatalogPageIsOpened(CatalogNavigatorPage catalogNavigatorPage, ActionCameraPage actionCameraPage) {
-        catalogNavigatorPage.goToActionCameraPage(driver);
-        actionCameraPage.isActionCameraPageOpened(driver);
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
+ /*   public CommonCatalogPage checkCatalogPageIsOpened(WebDriver driver, CatalogNavigatorPage catalogNavigatorPage) {
+        catalogNavigatorPage.goToActionCameraPage();
+        actionCameraPage.isActionCameraPageOpened();
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
         return new CommonCatalogPage(driver);
-    }
-    public CommonCatalogPage isProductsDisplayed () {
+    }*/
 
+     public CommonCatalogPage isProductsDisplayed () {
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isFilterSectionDisplayed () {
-
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
 
     public CommonCatalogPage isAnyFilterExisted () {
-
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
         return new CommonCatalogPage(driver);
     }
 }
