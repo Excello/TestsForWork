@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Englich on 11.11.2017.
@@ -18,7 +19,6 @@ public class TestData {
     {
         @Override
         public void get(String s) {
-
         }
 
         @Override
@@ -88,9 +88,9 @@ public class TestData {
         System.setProperty("webdriver.chrome.driver", "D://automation/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-      /*  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);*/
+        driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
         driver.get(URL_MAIN_PAGE);
     }
 

@@ -10,13 +10,19 @@ import org.testng.Assert;
  */
 public class NotebookPage extends CommonCatalogPage {
     private static By NOTEBOOK_PAGE_TITLE = By.cssSelector(".schema-header__title");
+    CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+    CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver);
 
     public NotebookPage(WebDriver driver) {
         super(driver);
     }
 
-    public NotebookPage isNotebookPageOpened () {
+    public NotebookPage checkCatalogPageIsOpened() {
+        catalogNavigatorPage.goToNotebookPage();
         Assert.assertTrue(driver.findElement(NOTEBOOK_PAGE_TITLE).getText().contains("Ноутбуки"));
+        commonCatalogPage.isProductsDisplayed();
+        commonCatalogPage.isFilterSectionDisplayed();
+        commonCatalogPage.isAnyFilterExisted();
         return new NotebookPage(driver);
     }
 }

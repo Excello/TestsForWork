@@ -10,13 +10,19 @@ import org.testng.Assert;
  */
 public class DisplayPage extends CommonCatalogPage {
     private static By DISPLAY_PAGE_TITLE = By.cssSelector(".schema-header__title");
+    CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+    CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver);
 
     public DisplayPage(WebDriver driver) {
         super(driver);
     }
 
-    public DisplayPage isDisplayPageOpened () {
+    public DisplayPage checkCatalogPageIsOpened() {
+        catalogNavigatorPage.goToDisplayPage();
         Assert.assertTrue(driver.findElement(DISPLAY_PAGE_TITLE).getText().contains("Мониторы"));
+        commonCatalogPage.isProductsDisplayed();
+        commonCatalogPage.isFilterSectionDisplayed();
+        commonCatalogPage.isAnyFilterExisted();
         return new DisplayPage(driver);
     }
 }

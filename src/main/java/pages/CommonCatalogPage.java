@@ -12,7 +12,6 @@ public class CommonCatalogPage {
     public WebDriver driver = new WebDriver() {
         @Override
         public void get(String s) {
-
         }
 
         @Override
@@ -83,8 +82,15 @@ public class CommonCatalogPage {
         this.driver = driver;
     }
 
+ /*   public CommonCatalogPage checkCatalogPageIsOpened(WebDriver driver, CatalogNavigatorPage catalogNavigatorPage) {
+        catalogNavigatorPage.goToActionCameraPage();
+        actionCameraPage.isActionCameraPageOpened();
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
+        return new CommonCatalogPage(driver);
+    }*/
 
-    public CommonCatalogPage isProductsDisplayed () {
+     public CommonCatalogPage isProductsDisplayed () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
