@@ -20,10 +20,6 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
     private static By HEADPHONES_PAGE_TAB = By.linkText("Наушники и гарнитуры");
     private static By DESKTOP_PC_PAGE_TAB = By.linkText("Компьютеры");
     private static By ACTION_CAMERA_PAGE_TAB = By.linkText("Экшен-камеры");
- /* Impossible to find on page
-    private static By PRINTERS_PAGE_TAB = By.linkText("Принтеры и МФУ");
-    private static By PARFUME_PAGE_TAB = By.linkText("Парфюмерия");
-    private static By HOUSE_PAGE_TAB = By.linkText("Дома, коттеджи");*/
 
     public CatalogNavigatorPage(WebDriver driver) {
         super(driver);
@@ -90,17 +86,4 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
         driver.findElement(ACTION_CAMERA_PAGE_TAB).click();
         return new ActionCameraPage(driver);
     }
-
-/*    public static void GoToPrinterPage(WebDriver driver) {
-        driver.findElement(PRINTERS_PAGE_TAB).click();
-    }
-
-    public static void GoToParfumePage(WebDriver driver) {
-        driver.findElement(PARFUME_PAGE_TAB).click();
-    }
-
-    public static void GoToHousePage(WebDriver driver) {
-        driver.findElement(HOUSE_PAGE_TAB).click();
-    }*/
-
 }

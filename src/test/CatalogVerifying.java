@@ -2,134 +2,145 @@ import core.TestData;
 import org.testng.annotations.Test;
 import pages.*;
 
-import java.util.NoSuchElementException;
-
 /**
  * Created by Englich on 11.11.2017.
  *
  */
 public class CatalogVerifying extends TestData {
-    @Test(priority=0)
-    public void MobileCatalogTest() {
-        MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
-        MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-
-    }
-    @Test(priority=1)
-    public void TabletPcCatalogTest() {
-        TabletPcPage tabletPcPage = new CatalogNavigatorPage(driver).goToTabletPcPage();
-        tabletPcPage.isTabletPcPageOpened();
-        tabletPcPage.isProductsDisplayed();
-        tabletPcPage.isFilterSectionDisplayed();
-        tabletPcPage.isAnyFilterExisted();
-    }
-    @Test(priority=2)
-    public void NotebookCatalogTest() {
-        NotebookPage notebookPage = new CatalogNavigatorPage(driver).goToNotebookPage();
-        NotebookPage notebookPageResult = new NotebookPage(driver).isNotebookPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=3)
-    public void TvCatalogTest() {
-        TvPage tvPage = new CatalogNavigatorPage(driver).goToTvPage();
-        TvPage tvPageResult = new TvPage(driver).isTvPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=4)
-    public void PhotoCatalogTest() {
-        PhotoPage photoPage = new CatalogNavigatorPage(driver).goToPhotoPage();
-        PhotoPage photoPageResult = new PhotoPage(driver).isPhotoPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=5)
-    public void TiresCatalogTest() {
-        TiresPage tiresPage = new CatalogNavigatorPage(driver).goToTiresPage();
-        TiresPage tiresPageResult = new TiresPage(driver).isTiresPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=6)
-    public void RefrigeratorCatalogTest() {
-        RefrigeratorPage refrigeratorPage = new CatalogNavigatorPage(driver).goToRefrigeratorPage();
-        RefrigeratorPage refrigeratorPageResult = new RefrigeratorPage(driver).isRefrigeratorPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=7)
-    public void HeaterCatalogTest() {
-        HeaterPage heaterPage = new CatalogNavigatorPage(driver).goToHeaterPage();
-        HeaterPage heaterPageResult = new HeaterPage(driver).isHeaterPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=8)
-    public void DisplayCatalogTest() {
-        DisplayPage displayPage = new CatalogNavigatorPage(driver).goToDisplayPage();
-        DisplayPage displayPageResult = new DisplayPage(driver).isDisplayPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=9)
-    public void HeadphonesCatalogTest() {
-        HeadphonesPage headphonesPage = new CatalogNavigatorPage(driver).goToHeadphonesPage();
-        HeadphonesPage headphonesPageResult = new HeadphonesPage(driver).isHeadphonesPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=10)
-    public void DesktopPcCatalogTest() {
-        DesktopPcPage desktopPcPage = new CatalogNavigatorPage(driver).goToDesktopPcPage();
-        DesktopPcPage desktopPcPageResult = new DesktopPcPage(driver).isDesktopPcPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
-    }
-    @Test(priority=11)
-    public void ActionCameraCatalogTest() {
-        ActionCameraPage actionCameraPage = new CatalogNavigatorPage(driver).goToActionCameraPage();
-        ActionCameraPage actionCameraPageResult = new ActionCameraPage(driver).isActionCameraPageOpened();
-        CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
-        CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
-        CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
+    public void checkCatalogs(String pageName) {
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+        switch (pageName) {
+            case "ActionCameraPage" : ActionCameraPage actionCameraPage = catalogNavigatorPage.goToActionCameraPage();
+                actionCameraPage.isActionCameraPageOpened();
+                actionCameraPage.isProductsDisplayed();
+                actionCameraPage.isFilterSectionDisplayed();
+                actionCameraPage.isAnyFilterExisted();
+                break;
+            case "DesktopPcPage" : DesktopPcPage desktopPcPage = catalogNavigatorPage.goToDesktopPcPage();
+                desktopPcPage.isDesktopPcPageOpened();
+                desktopPcPage.isProductsDisplayed();
+                desktopPcPage.isFilterSectionDisplayed();
+                desktopPcPage.isAnyFilterExisted();
+                break;
+            case "DisplayPage" : DisplayPage displayPage = catalogNavigatorPage.goToDisplayPage();
+                displayPage.isDisplayPageOpened();
+                displayPage.isProductsDisplayed();
+                displayPage.isFilterSectionDisplayed();
+                displayPage.isAnyFilterExisted();
+                break;
+            case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
+                headphonesPage.isHeadphonesPageOpened();
+                headphonesPage.isProductsDisplayed();
+                headphonesPage.isFilterSectionDisplayed();
+                headphonesPage.isAnyFilterExisted();
+                break;
+            case "HeaterPage" : HeaterPage heaterPage = catalogNavigatorPage.goToHeaterPage();
+                heaterPage.isHeaterPageOpened();
+                heaterPage.isProductsDisplayed();
+                heaterPage.isFilterSectionDisplayed();
+                heaterPage.isAnyFilterExisted();
+                break;
+            case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
+                mobilePage.isMobilePageOpened();
+                mobilePage.isProductsDisplayed();
+                mobilePage.isFilterSectionDisplayed();
+                mobilePage.isAnyFilterExisted();
+                break;
+            case "NotebookPage" : NotebookPage notebookPage = catalogNavigatorPage.goToNotebookPage();
+                notebookPage.isNotebookPageOpened();
+                notebookPage.isProductsDisplayed();
+                notebookPage.isFilterSectionDisplayed();
+                notebookPage.isAnyFilterExisted();
+                break;
+            case "PhotoPage" : PhotoPage photoPage = catalogNavigatorPage.goToPhotoPage();
+                photoPage.isPhotoPageOpened();
+                photoPage.isProductsDisplayed();
+                photoPage.isFilterSectionDisplayed();
+                photoPage.isAnyFilterExisted();
+                break;
+            case "RefrigeratorPage" : RefrigeratorPage refrigeratorPage = catalogNavigatorPage.goToRefrigeratorPage();
+                refrigeratorPage.isRefrigeratorPageOpened();
+                refrigeratorPage.isProductsDisplayed();
+                refrigeratorPage.isFilterSectionDisplayed();
+                refrigeratorPage.isAnyFilterExisted();
+                break;
+            case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
+                tabletPcPage.isTabletPcPageOpened();
+                tabletPcPage.isProductsDisplayed();
+                tabletPcPage.isFilterSectionDisplayed();
+                tabletPcPage.isAnyFilterExisted();
+                break;
+            case "TiresPage" : TiresPage tiresPage = catalogNavigatorPage.goToTiresPage();
+                tiresPage.isTiresPageOpened();
+                tiresPage.isProductsDisplayed();
+                tiresPage.isFilterSectionDisplayed();
+                tiresPage.isAnyFilterExisted();
+            case "TvPage" : TvPage tvPage = catalogNavigatorPage.goToTvPage();
+                tvPage.isTvPageOpened();
+                tvPage.isProductsDisplayed();
+                tvPage.isFilterSectionDisplayed();
+                tvPage.isAnyFilterExisted();
+                break;
+        }
     }
 
-   /* Impossible to find on page these catalogs
-    @Test
-    public void PrintersCatalogTest() {
-        CatalogNavigatorPage.GoToPrinterPage(driver);
-        PrintersPage.PrintersPageIsOpened(driver);
-        PrintersPage.CheckPrintersProducts(driver);
-        PrintersPage.CheckFilterSection(driver);
-        PrintersPage.AnyFilterIsExisted(driver);
+    @Test(priority = 1)
+    public void ActionCameraPageTest() {
+        checkCatalogs("ActionCameraPage");
     }
-    @Test
-    public void ParfumeCatalogTest() {
-        CatalogNavigatorPage.GoToParfumePage(driver);
-        ParfumePage.ParfumePageIsOpened(driver);
-        ParfumePage.CheckParfumeProducts(driver);
-        ParfumePage.CheckFilterSection(driver);
-        ParfumePage.AnyFilterIsExisted(driver);
+
+    @Test(priority = 2)
+    public void DesktopPcPageTest() {
+        checkCatalogs("DesktopPcPage");
     }
-    @Test
-    public void HouseCatalogTest() {
-        CatalogNavigatorPage.GoToHousePage(driver);
-        HousePage.HousePageIsOpened(driver);
-        HousePage.CheckHouseProducts(driver);
-        HousePage.CheckFilterSection(driver);
-        HousePage.AnyFilterIsExisted(driver);
-    }*/
+
+    @Test(priority = 3)
+    public void DisplayPageTest() {
+        checkCatalogs("DisplayPage");
+    }
+
+    @Test(priority = 4)
+    public void HeadphonesPageTest() {
+        checkCatalogs("HeadphonesPage");
+    }
+
+    @Test(priority = 5)
+    public void HeaterPageTest() {
+        checkCatalogs("HeaterPage");
+    }
+
+    @Test(priority = 6)
+    public void MobilePageTest() {
+        checkCatalogs("MobilePage");
+    }
+
+    @Test(priority = 7)
+    public void NotebookPageTest() {
+        checkCatalogs("NotebookPage");
+    }
+
+    @Test(priority = 8)
+    public void PhotoPageTest() {
+        checkCatalogs("PhotoPage");
+    }
+
+    @Test(priority = 9)
+    public void RefrigeratorPageTest() {
+        checkCatalogs("RefrigeratorPage");
+    }
+
+    @Test(priority = 10)
+    public void TabletPcPageTest() {
+        checkCatalogs("TabletPcPage");
+    }
+
+    @Test(priority = 11)
+    public void TiresPageTest() {
+        checkCatalogs("TiresPage");
+    }
+
+    @Test(priority = 12)
+    public void TvPage() {
+        checkCatalogs("TvPageTest");
+    }
 }

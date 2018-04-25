@@ -11,9 +11,7 @@ import java.util.Set;
 public class CommonCatalogPage {
     public WebDriver driver = new WebDriver() {
         @Override
-        public void get(String s) {
-
-        }
+        public void get(String s) { }
 
         @Override
         public String getCurrentUrl() {
@@ -41,14 +39,10 @@ public class CommonCatalogPage {
         }
 
         @Override
-        public void close() {
-
-        }
+        public void close() { }
 
         @Override
-        public void quit() {
-
-        }
+        public void quit() { }
 
         @Override
         public Set<String> getWindowHandles() {
@@ -82,7 +76,6 @@ public class CommonCatalogPage {
     public CommonCatalogPage(WebDriver driver) {
         this.driver = driver;
     }
-
 
     public CommonCatalogPage isProductsDisplayed () {
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
