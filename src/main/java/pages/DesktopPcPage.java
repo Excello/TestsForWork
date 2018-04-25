@@ -10,19 +10,13 @@ import org.testng.Assert;
  */
 public class DesktopPcPage extends CommonCatalogPage {
     private static By DESKTOP_PC_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
-    CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver);
 
     public DesktopPcPage(WebDriver driver) {
         super(driver);
     }
 
-    public DesktopPcPage checkCatalogPageIsOpened() {
-        catalogNavigatorPage.goToDesktopPcPage();
+    public DesktopPcPage isDesktopPcPageOpened() {
         Assert.assertTrue(driver.findElement(DESKTOP_PC_PAGE_TITLE).getText().contains("Компьютеры"));
-        commonCatalogPage.isProductsDisplayed();
-        commonCatalogPage.isFilterSectionDisplayed();
-        commonCatalogPage.isAnyFilterExisted();
         return new DesktopPcPage(driver);
     }
 }
