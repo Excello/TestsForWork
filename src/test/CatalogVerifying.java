@@ -7,6 +7,7 @@ import pages.*;
  *
  */
 public class CatalogVerifying extends TestData {
+<<<<<<< HEAD
     public void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
         switch (pageName) {
@@ -132,6 +133,68 @@ public class CatalogVerifying extends TestData {
     @Test(priority = 10)
     public void TabletPcPageTest() {
         checkCatalogs("TabletPcPage");
+=======
+
+    @Test
+    public void MobileCatalogTest() {
+        MobilePage mobilePage = new MobilePage(driver);
+        mobilePage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=1)
+    public void TabletPcCatalogTest() {
+        TabletPcPage tabletPcPage = new TabletPcPage(driver);
+        tabletPcPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=2)
+    public void NotebookCatalogTest() {
+        NotebookPage notebookPage = new NotebookPage(driver);
+        notebookPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=3)
+    public void TvCatalogTest() {
+        TvPage tvPage = new TvPage(driver);
+        tvPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=4)
+    public void PhotoCatalogTest() {
+        PhotoPage photoPage = new PhotoPage(driver);
+        photoPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=5)
+    public void TiresCatalogTest() {
+        TiresPage tiresPage = new TiresPage(driver);
+        tiresPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=6)
+    public void RefrigeratorCatalogTest() {
+        RefrigeratorPage refrigeratorPage = new RefrigeratorPage(driver);
+        refrigeratorPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=7)
+    public void HeaterCatalogTest() {
+        HeaterPage heaterPage = new HeaterPage(driver);
+        heaterPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=8)
+    public void DisplayCatalogTest() {
+        DisplayPage displayPage = new DisplayPage(driver);
+        displayPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=9)
+    public void HeadphonesCatalogTest() {
+        HeadphonesPage headphonesPage = new HeadphonesPage(driver);
+        headphonesPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=10)
+    public void DesktopPcCatalogTest() {
+        DesktopPcPage desktopPcPage = new DesktopPcPage(driver);
+        desktopPcPage.checkCatalogPageIsOpened();
+    }
+    @Test(priority=11)
+    public void ActionCameraCatalogTest() {
+        ActionCameraPage actionCameraPage = new ActionCameraPage(driver);
+        actionCameraPage.checkCatalogPageIsOpened();
+>>>>>>> master
     }
 
     @Test(priority = 11)

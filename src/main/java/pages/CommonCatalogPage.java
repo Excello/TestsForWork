@@ -11,7 +11,12 @@ import java.util.Set;
 public class CommonCatalogPage {
     public WebDriver driver = new WebDriver() {
         @Override
+<<<<<<< HEAD
         public void get(String s) { }
+=======
+        public void get(String s) {
+        }
+>>>>>>> master
 
         @Override
         public String getCurrentUrl() {
@@ -77,7 +82,19 @@ public class CommonCatalogPage {
         this.driver = driver;
     }
 
+<<<<<<< HEAD
     public CommonCatalogPage isProductsDisplayed () {
+=======
+ /*   public CommonCatalogPage checkCatalogPageIsOpened(WebDriver driver, CatalogNavigatorPage catalogNavigatorPage) {
+        catalogNavigatorPage.goToActionCameraPage();
+        actionCameraPage.isActionCameraPageOpened();
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
+        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
+        return new CommonCatalogPage(driver);
+    }*/
+
+     public CommonCatalogPage isProductsDisplayed () {
+>>>>>>> master
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
