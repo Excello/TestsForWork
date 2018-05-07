@@ -10,23 +10,17 @@ public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
         switch (pageName) {
-            case "ActionCameraPage" : ActionCameraPage actionCameraPage = catalogNavigatorPage.goToActionCameraPage();
-                actionCameraPage.isActionCameraPageOpened();
-                actionCameraPage.isProductsDisplayed();
-                actionCameraPage.isFilterSectionDisplayed();
-                actionCameraPage.isAnyFilterExisted();
+            case "BicyclePage" : BicyclePage bicyclePage = catalogNavigatorPage.goToBicyclePage();
+                bicyclePage.isActionCameraPageOpened();
+                bicyclePage.isProductsDisplayed();
+                bicyclePage.isFilterSectionDisplayed();
+                bicyclePage.isAnyFilterExisted();
                 break;
-            case "DesktopPcPage" : DesktopPcPage desktopPcPage = catalogNavigatorPage.goToDesktopPcPage();
-                desktopPcPage.isDesktopPcPageOpened();
-                desktopPcPage.isProductsDisplayed();
-                desktopPcPage.isFilterSectionDisplayed();
-                desktopPcPage.isAnyFilterExisted();
-                break;
-            case "DisplayPage" : DisplayPage displayPage = catalogNavigatorPage.goToDisplayPage();
-                displayPage.isDisplayPageOpened();
-                displayPage.isProductsDisplayed();
-                displayPage.isFilterSectionDisplayed();
-                displayPage.isAnyFilterExisted();
+            case "VideoCardPage" : VideoCardPage videoCardPage = catalogNavigatorPage.goToVideoCardPage();
+                videoCardPage.isDisplayPageOpened();
+                videoCardPage.isProductsDisplayed();
+                videoCardPage.isFilterSectionDisplayed();
+                videoCardPage.isAnyFilterExisted();
                 break;
             case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
                 headphonesPage.isHeadphonesPageOpened();
@@ -34,11 +28,11 @@ public class CatalogVerifying extends TestData {
                 headphonesPage.isFilterSectionDisplayed();
                 headphonesPage.isAnyFilterExisted();
                 break;
-            case "HeaterPage" : HeaterPage heaterPage = catalogNavigatorPage.goToHeaterPage();
-                heaterPage.isHeaterPageOpened();
-                heaterPage.isProductsDisplayed();
-                heaterPage.isFilterSectionDisplayed();
-                heaterPage.isAnyFilterExisted();
+            case "StrollersPage" : StrollersPage strollersPage = catalogNavigatorPage.goToStrollersPage();
+                strollersPage.isHeaterPageOpened();
+                strollersPage.isProductsDisplayed();
+                strollersPage.isFilterSectionDisplayed();
+                strollersPage.isAnyFilterExisted();
                 break;
             case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
                 mobilePage.isMobilePageOpened();
@@ -58,11 +52,11 @@ public class CatalogVerifying extends TestData {
                 photoPage.isFilterSectionDisplayed();
                 photoPage.isAnyFilterExisted();
                 break;
-            case "RefrigeratorPage" : RefrigeratorPage refrigeratorPage = catalogNavigatorPage.goToRefrigeratorPage();
-                refrigeratorPage.isRefrigeratorPageOpened();
-                refrigeratorPage.isProductsDisplayed();
-                refrigeratorPage.isFilterSectionDisplayed();
-                refrigeratorPage.isAnyFilterExisted();
+            case "MotorOilPage" : MotorOilPage motorOilPage = catalogNavigatorPage.goToMotorOilPage();
+                motorOilPage.isRefrigeratorPageOpened();
+                motorOilPage.isProductsDisplayed();
+                motorOilPage.isFilterSectionDisplayed();
+                motorOilPage.isAnyFilterExisted();
                 break;
             case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
                 tabletPcPage.isTabletPcPageOpened();
@@ -75,72 +69,66 @@ public class CatalogVerifying extends TestData {
                 tiresPage.isProductsDisplayed();
                 tiresPage.isFilterSectionDisplayed();
                 tiresPage.isAnyFilterExisted();
-            case "TvPage" : TvPage tvPage = catalogNavigatorPage.goToTvPage();
-                tvPage.isTvPageOpened();
-                tvPage.isProductsDisplayed();
-                tvPage.isFilterSectionDisplayed();
-                tvPage.isAnyFilterExisted();
+                break;
+            case "SmartWatchPage" : SmartWatchPage smartWatchPage = catalogNavigatorPage.goToSmartWatchPage();
+                smartWatchPage.isSmartWatchPageOpened();
+                smartWatchPage.isProductsDisplayed();
+                smartWatchPage.isFilterSectionDisplayed();
+                smartWatchPage.isAnyFilterExisted();
                 break;
         }
     }
 
     @Test(priority = 1)
-    public void ActionCameraPageTest() {
-        checkCatalogs("ActionCameraPage");
+    public void BicyclePageTest() {
+        checkCatalogs("BicyclePage");
     }
 
     @Test(priority = 2)
-    public void DesktopPcPageTest() {
-        checkCatalogs("DesktopPcPage");
+    public void VideoCardPageTest() {
+        checkCatalogs("VideoCardPage");
     }
 
     @Test(priority = 3)
-    public void DisplayPageTest() {
-        checkCatalogs("DisplayPage");
-    }
-
-    @Test(priority = 4)
     public void HeadphonesPageTest() {
         checkCatalogs("HeadphonesPage");
     }
 
-    @Test(priority = 5)
-    public void HeaterPageTest() {
-        checkCatalogs("HeaterPage");
+    @Test(priority = 4)
+    public void StrollersPageTest() {
+        checkCatalogs("StrollersPage");
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void MobilePageTest() {
         checkCatalogs("MobilePage");
     }
 
-    @Test(priority = 7)
+    @Test(priority = 6)
     public void NotebookPageTest() {
         checkCatalogs("NotebookPage");
     }
 
-    @Test(priority = 8)
+    @Test(priority = 7)
     public void PhotoPageTest() {
         checkCatalogs("PhotoPage");
     }
 
-    @Test(priority = 9)
-    public void RefrigeratorPageTest() {
-        checkCatalogs("RefrigeratorPage");
+    @Test(priority = 8)
+    public void MotorOilPageTest() {
+        checkCatalogs("MotorOilPage");
     }
 
-    @Test(priority = 10)
+    @Test(priority = 9)
     public void TabletPcPageTest() {
         checkCatalogs("TabletPcPage");
     }
 
-    @Test(priority = 11)
-    public void TiresPageTest() {
-        checkCatalogs("TiresPage");
-    }
+    @Test(priority = 10)
+    public void TiresPageTest() { checkCatalogs("TiresPage"); }
 
-    @Test(priority = 12)
-    public void TvPage() {
-        checkCatalogs("TvPageTest");
+    @Test(priority = 11)
+    public void SmartWatchPage() {
+        checkCatalogs("SmartWatchPage");
     }
 }

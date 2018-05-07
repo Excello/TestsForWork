@@ -11,15 +11,14 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
     private static By MOBILE_PAGE_TAB = By.linkText("Мобильные телефоны");
     private static By TABLET_PC_PAGE_TAB = By.linkText("Планшеты");
     private static By NOTEBOOK_PAGE_TAB = By.linkText("Ноутбуки");
-    private static By TV_PAGE_TAB = By.linkText("Телевизоры");
+    private static By SMART_WATCH_PAGE_TAB = By.linkText("Умные часы и браслеты");
     private static By PHOTO_PAGE_TAB = By.linkText("Фотоаппараты");
     private static By TIRES_PAGE_TAB = By.linkText("Автомобильные шины");
-    private static By REFRIGERATOR_PAGE_TAB = By.linkText("Холодильники");
-    private static By HEATER_PAGE_TAB = By.linkText("Обогреватели");
-    private static By DISPLAY_PAGE_TAB = By.linkText("Мониторы");
+    private static By MOTOR_OIL_PAGE_TAB = By.linkText("Моторные масла");
+    private static By STROLLERS_PAGE_TAB = By.linkText("Детские коляски");
+    private static By VIDEO_CARD_PAGE_TAB = By.linkText("Видеокарты");
     private static By HEADPHONES_PAGE_TAB = By.linkText("Наушники и гарнитуры");
-    private static By DESKTOP_PC_PAGE_TAB = By.linkText("Компьютеры");
-    private static By ACTION_CAMERA_PAGE_TAB = By.linkText("Экшен-камеры");
+    private static By BICYCLE_PAGE_TAB = By.linkText("Велосипеды");
 
     public CatalogNavigatorPage(WebDriver driver) {
         super(driver);
@@ -40,10 +39,10 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
         return new NotebookPage(driver);
     }
 
-    public TvPage goToTvPage()
+    public SmartWatchPage goToSmartWatchPage()
     {
-        driver.findElement(TV_PAGE_TAB).click();
-        return new TvPage(driver);
+        driver.findElement(SMART_WATCH_PAGE_TAB).click();
+        return new SmartWatchPage(driver);
     }
 
     public PhotoPage goToPhotoPage()
@@ -57,19 +56,19 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
         return new TiresPage(driver);
     }
 
-    public RefrigeratorPage goToRefrigeratorPage() {
-        driver.findElement(REFRIGERATOR_PAGE_TAB).click();
-        return new RefrigeratorPage(driver);
+    public MotorOilPage goToMotorOilPage() {
+        driver.findElement(MOTOR_OIL_PAGE_TAB).click();
+        return new MotorOilPage(driver);
     }
 
-    public HeaterPage goToHeaterPage() {
-        driver.findElement(HEATER_PAGE_TAB).click();
-        return new HeaterPage(driver);
+    public StrollersPage goToStrollersPage() {
+        driver.findElement(STROLLERS_PAGE_TAB).click();
+        return new StrollersPage(driver);
     }
 
-    public DisplayPage goToDisplayPage() {
-        driver.findElement(DISPLAY_PAGE_TAB).click();
-        return new DisplayPage(driver);
+    public VideoCardPage goToVideoCardPage() {
+        driver.findElement(VIDEO_CARD_PAGE_TAB).click();
+        return new VideoCardPage(driver);
     }
 
     public HeadphonesPage goToHeadphonesPage() {
@@ -77,13 +76,8 @@ public class CatalogNavigatorPage extends CommonCatalogPage{
         return new HeadphonesPage(driver);
     }
 
-    public DesktopPcPage goToDesktopPcPage() {
-        driver.findElement(DESKTOP_PC_PAGE_TAB).click();
-        return new DesktopPcPage(driver);
-    }
-
-    public ActionCameraPage goToActionCameraPage() {
-        driver.findElement(ACTION_CAMERA_PAGE_TAB).click();
-        return new ActionCameraPage(driver);
+    public BicyclePage goToBicyclePage() {
+        driver.findElement(BICYCLE_PAGE_TAB).click();
+        return new BicyclePage(driver);
     }
 }
