@@ -9,6 +9,11 @@ import pages.*;
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+
+        //TODO
+        //1. В switch оставить только переход на страницу. вызов isProductsDisplayed, isFilterSectionDisplayed, isAnyFilterExisted сделать за switch
+        //2. Не нравится привязка к текстовому имени класса. Лучше напрямую делать например BicyclePage.class.getSimpleName()
+        //3. В действительности лучше сдедать в catalogNavigatorPage метод openSubCatalog(Class catalogClass)
         switch (pageName) {
             case "BicyclePage" : BicyclePage bicyclePage = catalogNavigatorPage.goToBicyclePage();
                 bicyclePage.isActionCameraPageOpened();

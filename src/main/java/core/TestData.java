@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
  * Created by Englich on 11.11.2017.
  */
 public class TestData {
+    //TODO Зачем создавать эту пустую и нерабочую реализацию???
     public WebDriver driver = new WebDriver()
     {
         @Override

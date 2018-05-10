@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 public class CommonCatalogPage {
+
+    //TODO Зачем создавать эту пустую и нерабочую реализацию???
     public WebDriver driver = new WebDriver() {
         @Override
         public void get(String s) { }
