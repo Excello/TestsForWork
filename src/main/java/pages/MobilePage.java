@@ -10,19 +10,13 @@ import org.testng.Assert;
  */
 public class MobilePage extends CommonCatalogPage {
     private static By MOBILE_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
-    CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver);
 
     public MobilePage(WebDriver driver) {
         super(driver);
     }
 
-    public MobilePage checkCatalogPageIsOpened() {
-        catalogNavigatorPage.goToMobilePage();
+    public MobilePage isMobilePageOpened() {
         Assert.assertTrue(driver.findElement(MOBILE_PAGE_TITLE).getText().contains("Мобильные телефоны"));
-        commonCatalogPage.isProductsDisplayed();
-        commonCatalogPage.isFilterSectionDisplayed();
-        commonCatalogPage.isAnyFilterExisted();
         return new MobilePage(driver);
     }
 }

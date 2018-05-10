@@ -10,19 +10,13 @@ import org.testng.Assert;
  */
 public class TabletPcPage extends CommonCatalogPage {
     private static By TABLET_PC_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
-    CommonCatalogPage commonCatalogPage = new CommonCatalogPage(driver);
 
     public TabletPcPage(WebDriver driver) {
         super(driver);
     }
 
-    public TabletPcPage checkCatalogPageIsOpened() {
-        catalogNavigatorPage.goToTabletPcPage();
+    public TabletPcPage isTabletPcPageOpened() {
         Assert.assertTrue(driver.findElement(TABLET_PC_PAGE_TITLE).getText().contains("Планшеты"));
-        commonCatalogPage.isProductsDisplayed();
-        commonCatalogPage.isFilterSectionDisplayed();
-        commonCatalogPage.isAnyFilterExisted();
         return new TabletPcPage(driver);
     }
 }

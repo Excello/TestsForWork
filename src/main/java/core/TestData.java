@@ -18,8 +18,7 @@ public class TestData {
     public WebDriver driver = new WebDriver()
     {
         @Override
-        public void get(String s) {
-        }
+        public void get(String s) { }
 
         @Override
         public String getCurrentUrl() {
@@ -47,14 +46,10 @@ public class TestData {
         }
 
         @Override
-        public void close() {
-
-        }
+        public void close() { }
 
         @Override
-        public void quit() {
-
-        }
+        public void quit() { }
 
         @Override
         public Set<String> getWindowHandles() {

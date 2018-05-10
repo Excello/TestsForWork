@@ -7,92 +7,128 @@ import pages.*;
  *
  */
 public class CatalogVerifying extends TestData {
-
-    @Test
-    public void MobileCatalogTest() {
-        MobilePage mobilePage = new MobilePage(driver);
-        mobilePage.checkCatalogPageIsOpened();
+    private void checkCatalogs(String pageName) {
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+        switch (pageName) {
+            case "BicyclePage" : BicyclePage bicyclePage = catalogNavigatorPage.goToBicyclePage();
+                bicyclePage.isActionCameraPageOpened();
+                bicyclePage.isProductsDisplayed();
+                bicyclePage.isFilterSectionDisplayed();
+                bicyclePage.isAnyFilterExisted();
+                break;
+            case "VideoCardPage" : VideoCardPage videoCardPage = catalogNavigatorPage.goToVideoCardPage();
+                videoCardPage.isDisplayPageOpened();
+                videoCardPage.isProductsDisplayed();
+                videoCardPage.isFilterSectionDisplayed();
+                videoCardPage.isAnyFilterExisted();
+                break;
+            case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
+                headphonesPage.isHeadphonesPageOpened();
+                headphonesPage.isProductsDisplayed();
+                headphonesPage.isFilterSectionDisplayed();
+                headphonesPage.isAnyFilterExisted();
+                break;
+            case "StrollersPage" : StrollersPage strollersPage = catalogNavigatorPage.goToStrollersPage();
+                strollersPage.isHeaterPageOpened();
+                strollersPage.isProductsDisplayed();
+                strollersPage.isFilterSectionDisplayed();
+                strollersPage.isAnyFilterExisted();
+                break;
+            case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
+                mobilePage.isMobilePageOpened();
+                mobilePage.isProductsDisplayed();
+                mobilePage.isFilterSectionDisplayed();
+                mobilePage.isAnyFilterExisted();
+                break;
+            case "NotebookPage" : NotebookPage notebookPage = catalogNavigatorPage.goToNotebookPage();
+                notebookPage.isNotebookPageOpened();
+                notebookPage.isProductsDisplayed();
+                notebookPage.isFilterSectionDisplayed();
+                notebookPage.isAnyFilterExisted();
+                break;
+            case "PhotoPage" : PhotoPage photoPage = catalogNavigatorPage.goToPhotoPage();
+                photoPage.isPhotoPageOpened();
+                photoPage.isProductsDisplayed();
+                photoPage.isFilterSectionDisplayed();
+                photoPage.isAnyFilterExisted();
+                break;
+            case "MotorOilPage" : MotorOilPage motorOilPage = catalogNavigatorPage.goToMotorOilPage();
+                motorOilPage.isRefrigeratorPageOpened();
+                motorOilPage.isProductsDisplayed();
+                motorOilPage.isFilterSectionDisplayed();
+                motorOilPage.isAnyFilterExisted();
+                break;
+            case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
+                tabletPcPage.isTabletPcPageOpened();
+                tabletPcPage.isProductsDisplayed();
+                tabletPcPage.isFilterSectionDisplayed();
+                tabletPcPage.isAnyFilterExisted();
+                break;
+            case "TiresPage" : TiresPage tiresPage = catalogNavigatorPage.goToTiresPage();
+                tiresPage.isTiresPageOpened();
+                tiresPage.isProductsDisplayed();
+                tiresPage.isFilterSectionDisplayed();
+                tiresPage.isAnyFilterExisted();
+                break;
+            case "SmartWatchPage" : SmartWatchPage smartWatchPage = catalogNavigatorPage.goToSmartWatchPage();
+                smartWatchPage.isSmartWatchPageOpened();
+                smartWatchPage.isProductsDisplayed();
+                smartWatchPage.isFilterSectionDisplayed();
+                smartWatchPage.isAnyFilterExisted();
+                break;
+        }
     }
 
-    @Test(priority=1)
-    public void TabletPcCatalogTest() {
-        TabletPcPage tabletPcPage = new TabletPcPage(driver);
-        tabletPcPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=2)
-    public void NotebookCatalogTest() {
-        NotebookPage notebookPage = new NotebookPage(driver);
-        notebookPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=3)
-    public void TvCatalogTest() {
-        TvPage tvPage = new TvPage(driver);
-        tvPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=4)
-    public void PhotoCatalogTest() {
-        PhotoPage photoPage = new PhotoPage(driver);
-        photoPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=5)
-    public void TiresCatalogTest() {
-        TiresPage tiresPage = new TiresPage(driver);
-        tiresPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=6)
-    public void RefrigeratorCatalogTest() {
-        RefrigeratorPage refrigeratorPage = new RefrigeratorPage(driver);
-        refrigeratorPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=7)
-    public void HeaterCatalogTest() {
-        HeaterPage heaterPage = new HeaterPage(driver);
-        heaterPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=8)
-    public void DisplayCatalogTest() {
-        DisplayPage displayPage = new DisplayPage(driver);
-        displayPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=9)
-    public void HeadphonesCatalogTest() {
-        HeadphonesPage headphonesPage = new HeadphonesPage(driver);
-        headphonesPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=10)
-    public void DesktopPcCatalogTest() {
-        DesktopPcPage desktopPcPage = new DesktopPcPage(driver);
-        desktopPcPage.checkCatalogPageIsOpened();
-    }
-    @Test(priority=11)
-    public void ActionCameraCatalogTest() {
-        ActionCameraPage actionCameraPage = new ActionCameraPage(driver);
-        actionCameraPage.checkCatalogPageIsOpened();
+    @Test(priority = 1)
+    public void BicyclePageTest() {
+        checkCatalogs("BicyclePage");
     }
 
-   /* Impossible to find on page these catalogs
-    @Test
-    public void PrintersCatalogTest() {
-        CatalogNavigatorPage.GoToPrinterPage(driver);
-        PrintersPage.PrintersPageIsOpened(driver);
-        PrintersPage.CheckPrintersProducts(driver);
-        PrintersPage.CheckFilterSection(driver);
-        PrintersPage.AnyFilterIsExisted(driver);
+    @Test(priority = 2)
+    public void VideoCardPageTest() {
+        checkCatalogs("VideoCardPage");
     }
-    @Test
-    public void ParfumeCatalogTest() {
-        CatalogNavigatorPage.GoToParfumePage(driver);
-        ParfumePage.ParfumePageIsOpened(driver);
-        ParfumePage.CheckParfumeProducts(driver);
-        ParfumePage.CheckFilterSection(driver);
-        ParfumePage.AnyFilterIsExisted(driver);
+
+    @Test(priority = 3)
+    public void HeadphonesPageTest() {
+        checkCatalogs("HeadphonesPage");
     }
-    @Test
-    public void HouseCatalogTest() {
-        CatalogNavigatorPage.GoToHousePage(driver);
-        HousePage.HousePageIsOpened(driver);
-        HousePage.CheckHouseProducts(driver);
-        HousePage.CheckFilterSection(driver);
-        HousePage.AnyFilterIsExisted(driver);
-    }*/
+
+    @Test(priority = 4)
+    public void StrollersPageTest() {
+        checkCatalogs("StrollersPage");
+    }
+
+    @Test(priority = 5)
+    public void MobilePageTest() {
+        checkCatalogs("MobilePage");
+    }
+
+    @Test(priority = 6)
+    public void NotebookPageTest() {
+        checkCatalogs("NotebookPage");
+    }
+
+    @Test(priority = 7)
+    public void PhotoPageTest() {
+        checkCatalogs("PhotoPage");
+    }
+
+    @Test(priority = 8)
+    public void MotorOilPageTest() {
+        checkCatalogs("MotorOilPage");
+    }
+
+    @Test(priority = 9)
+    public void TabletPcPageTest() {
+        checkCatalogs("TabletPcPage");
+    }
+
+    @Test(priority = 10)
+    public void TiresPageTest() { checkCatalogs("TiresPage"); }
+
+    @Test(priority = 11)
+    public void SmartWatchPage() {
+        checkCatalogs("SmartWatchPage");
+    }
 }
