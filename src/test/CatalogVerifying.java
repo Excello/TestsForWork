@@ -8,7 +8,7 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(getDriver());
 
         //TODO
         //1. В switch оставить только переход на страницу. вызов isProductsDisplayed, isFilterSectionDisplayed, isAnyFilterExisted сделать за switch
@@ -16,70 +16,70 @@ public class CatalogVerifying extends TestData {
         //3. В действительности лучше сдедать в catalogNavigatorPage метод openSubCatalog(Class catalogClass)
         switch (pageName) {
             case "BicyclePage" : BicyclePage bicyclePage = catalogNavigatorPage.goToBicyclePage();
-                bicyclePage.isActionCameraPageOpened();
+                /*bicyclePage.isActionCameraPageOpened();
                 bicyclePage.isProductsDisplayed();
                 bicyclePage.isFilterSectionDisplayed();
-                bicyclePage.isAnyFilterExisted();
+                bicyclePage.isAnyFilterExisted();*/
                 break;
             case "VideoCardPage" : VideoCardPage videoCardPage = catalogNavigatorPage.goToVideoCardPage();
-                videoCardPage.isDisplayPageOpened();
+                /*videoCardPage.isDisplayPageOpened();
                 videoCardPage.isProductsDisplayed();
                 videoCardPage.isFilterSectionDisplayed();
-                videoCardPage.isAnyFilterExisted();
+                videoCardPage.isAnyFilterExisted();*/
                 break;
             case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
-                headphonesPage.isHeadphonesPageOpened();
+                /*headphonesPage.isHeadphonesPageOpened();
                 headphonesPage.isProductsDisplayed();
                 headphonesPage.isFilterSectionDisplayed();
-                headphonesPage.isAnyFilterExisted();
+                headphonesPage.isAnyFilterExisted();*/
                 break;
             case "StrollersPage" : StrollersPage strollersPage = catalogNavigatorPage.goToStrollersPage();
-                strollersPage.isHeaterPageOpened();
+                /*strollersPage.isHeaterPageOpened();
                 strollersPage.isProductsDisplayed();
                 strollersPage.isFilterSectionDisplayed();
-                strollersPage.isAnyFilterExisted();
+                strollersPage.isAnyFilterExisted();*/
                 break;
             case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
-                mobilePage.isMobilePageOpened();
+                /*mobilePage.isMobilePageOpened();
                 mobilePage.isProductsDisplayed();
                 mobilePage.isFilterSectionDisplayed();
-                mobilePage.isAnyFilterExisted();
+                mobilePage.isAnyFilterExisted();*/
                 break;
             case "NotebookPage" : NotebookPage notebookPage = catalogNavigatorPage.goToNotebookPage();
-                notebookPage.isNotebookPageOpened();
+                /*notebookPage.isNotebookPageOpened();
                 notebookPage.isProductsDisplayed();
                 notebookPage.isFilterSectionDisplayed();
-                notebookPage.isAnyFilterExisted();
+                notebookPage.isAnyFilterExisted();*/
                 break;
             case "PhotoPage" : PhotoPage photoPage = catalogNavigatorPage.goToPhotoPage();
-                photoPage.isPhotoPageOpened();
+                /*photoPage.isPhotoPageOpened();
                 photoPage.isProductsDisplayed();
                 photoPage.isFilterSectionDisplayed();
-                photoPage.isAnyFilterExisted();
+                photoPage.isAnyFilterExisted();*/
                 break;
             case "MotorOilPage" : MotorOilPage motorOilPage = catalogNavigatorPage.goToMotorOilPage();
-                motorOilPage.isRefrigeratorPageOpened();
+                /*motorOilPage.isRefrigeratorPageOpened();
                 motorOilPage.isProductsDisplayed();
                 motorOilPage.isFilterSectionDisplayed();
-                motorOilPage.isAnyFilterExisted();
+                motorOilPage.isAnyFilterExisted();*/
                 break;
             case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
-                tabletPcPage.isTabletPcPageOpened();
+                /*tabletPcPage.isTabletPcPageOpened();
                 tabletPcPage.isProductsDisplayed();
                 tabletPcPage.isFilterSectionDisplayed();
-                tabletPcPage.isAnyFilterExisted();
+                tabletPcPage.isAnyFilterExisted();*/
                 break;
             case "TiresPage" : TiresPage tiresPage = catalogNavigatorPage.goToTiresPage();
-                tiresPage.isTiresPageOpened();
+                /*tiresPage.isTiresPageOpened();
                 tiresPage.isProductsDisplayed();
                 tiresPage.isFilterSectionDisplayed();
-                tiresPage.isAnyFilterExisted();
+                tiresPage.isAnyFilterExisted();*/
                 break;
             case "SmartWatchPage" : SmartWatchPage smartWatchPage = catalogNavigatorPage.goToSmartWatchPage();
-                smartWatchPage.isSmartWatchPageOpened();
+                /*smartWatchPage.isSmartWatchPageOpened();
                 smartWatchPage.isProductsDisplayed();
                 smartWatchPage.isFilterSectionDisplayed();
-                smartWatchPage.isAnyFilterExisted();
+                smartWatchPage.isAnyFilterExisted();*/
                 break;
         }
     }

@@ -16,67 +16,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestData {
     //TODO Зачем создавать эту пустую и нерабочую реализацию???
-    public WebDriver driver = new WebDriver()
-    {
-        @Override
-        public void get(String s) { }
+    //FIX: Done
+    private WebDriver driver = null;
 
-        @Override
-        public String getCurrentUrl() {
-            return null;
-        }
+    public WebDriver getDriver() {
+        return driver;
+    }
 
-        @Override
-        public String getTitle() {
-            return null;
-        }
-
-        @Override
-        public List<WebElement> findElements(By by) {
-            return null;
-        }
-
-        @Override
-        public WebElement findElement(By by) {
-            return null;
-        }
-
-        @Override
-        public String getPageSource() {
-            return null;
-        }
-
-        @Override
-        public void close() { }
-
-        @Override
-        public void quit() { }
-
-        @Override
-        public Set<String> getWindowHandles() {
-            return null;
-        }
-
-        @Override
-        public String getWindowHandle() {
-            return null;
-        }
-
-        @Override
-        public TargetLocator switchTo() {
-            return null;
-        }
-
-        @Override
-        public Navigation navigate() {
-            return null;
-        }
-
-        @Override
-        public Options manage() {
-            return null;
-        }
-    };
     private static final String URL_MAIN_PAGE = "https://catalog.onliner.by/";
 
     @BeforeMethod

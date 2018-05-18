@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import java.util.List;
@@ -11,66 +12,14 @@ import java.util.Set;
 public class CommonCatalogPage {
 
     //TODO Зачем создавать эту пустую и нерабочую реализацию???
-    public WebDriver driver = new WebDriver() {
-        @Override
-        public void get(String s) { }
+    private WebDriver driver = null;
 
-        @Override
-        public String getCurrentUrl() {
-            return null;
-        }
+    public WebDriver getDriver() {
+        driver = new ChromeDriver();
+        return driver;
+    }
 
-        @Override
-        public String getTitle() {
-            return null;
-        }
 
-        @Override
-        public List<WebElement> findElements(By by) {
-            return null;
-        }
-
-        @Override
-        public WebElement findElement(By by) {
-            return null;
-        }
-
-        @Override
-        public String getPageSource() {
-            return null;
-        }
-
-        @Override
-        public void close() { }
-
-        @Override
-        public void quit() { }
-
-        @Override
-        public Set<String> getWindowHandles() {
-            return null;
-        }
-
-        @Override
-        public String getWindowHandle() {
-            return null;
-        }
-
-        @Override
-        public TargetLocator switchTo() {
-            return null;
-        }
-
-        @Override
-        public Navigation navigate() {
-            return null;
-        }
-
-        @Override
-        public Options manage() {
-            return null;
-        }
-    };
     private static By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
     private static By COMMON_CATALOG_FILTERS = By.id("schema-filter");
     private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
@@ -79,17 +28,45 @@ public class CommonCatalogPage {
         this.driver = driver;
     }
 
-     public CommonCatalogPage isProductsDisplayed () {
+    public CommonCatalogPage isPageOpened(String pageName){
+        switch (pageName) {
+            case "BicyclePage" : Assert.assertTrue(driver.findElement(BICYCLE_PAGE_TITLE).getText().contains("Велосипеды"));
+                break;
+            case "VideoCardPage" : VideoCardPage videoCardPage = catalogNavigatorPage.goToVideoCardPage();
+                break;
+            case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
+                break;
+            case "StrollersPage" : StrollersPage strollersPage = catalogNavigatorPage.goToStrollersPage();
+                break;
+            case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
+                break;
+            case "NotebookPage" : NotebookPage notebookPage = catalogNavigatorPage.goToNotebookPage();
+                break;
+            case "PhotoPage" : PhotoPage photoPage = catalogNavigatorPage.goToPhotoPage();
+                break;
+            case "MotorOilPage" : MotorOilPage motorOilPage = catalogNavigatorPage.goToMotorOilPage();
+                break;
+            case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
+                break;
+            case "TiresPage" : TiresPage tiresPage = catalogNavigatorPage.goToTiresPage();
+                break;
+            case "SmartWatchPage" : SmartWatchPage smartWatchPage = catalogNavigatorPage.goToSmartWatchPage();
+                break;
+        }
+            case:
+    }
+
+     public CommonCatalogPage isProductsDisplayed(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
 
-    public CommonCatalogPage isFilterSectionDisplayed () {
+    public CommonCatalogPage isFilterSectionDisplayed(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
         return new CommonCatalogPage(driver);
     }
 
-    public CommonCatalogPage isAnyFilterExisted () {
+    public CommonCatalogPage isAnyFilterExisted(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
         return new CommonCatalogPage(driver);
     }
