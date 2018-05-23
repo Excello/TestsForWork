@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
  * Created by Englich on 11.11.2017.
  *
  */
-public class CatalogNavigatorPage extends CommonCatalogPage{
+public class CatalogNavigatorPage extends BasePage {
     private static By MOBILE_PAGE_TAB = By.linkText("Мобильные телефоны");
     private static By TABLET_PC_PAGE_TAB = By.linkText("Планшеты");
     private static By NOTEBOOK_PAGE_TAB = By.linkText("Ноутбуки");

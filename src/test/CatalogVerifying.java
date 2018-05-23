@@ -8,80 +8,50 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(getDriver());
-
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
+        BasePage basePage = new BasePage(driver);
         //TODO
-        //1. В switch оставить только переход на страницу. вызов isProductsDisplayed, isFilterSectionDisplayed, isAnyFilterExisted сделать за switch
-        //2. Не нравится привязка к текстовому имени класса. Лучше напрямую делать например BicyclePage.class.getSimpleName()
+        //1. В switch оставить только переход на страницу. вызов isProductsDisplayed, isFilterSectionDisplayed, isAnyFilterExisted сделать за switch (Done)
+        //2. Не нравится привязка к текстовому имени класса. Лучше напрямую делать например BicyclePage.class.getSimpleName() (Done)
         //3. В действительности лучше сдедать в catalogNavigatorPage метод openSubCatalog(Class catalogClass)
         switch (pageName) {
-            case "BicyclePage" : BicyclePage bicyclePage = catalogNavigatorPage.goToBicyclePage();
-                /*bicyclePage.isActionCameraPageOpened();
-                bicyclePage.isProductsDisplayed();
-                bicyclePage.isFilterSectionDisplayed();
-                bicyclePage.isAnyFilterExisted();*/
+            case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "VideoCardPage" : VideoCardPage videoCardPage = catalogNavigatorPage.goToVideoCardPage();
-                /*videoCardPage.isDisplayPageOpened();
-                videoCardPage.isProductsDisplayed();
-                videoCardPage.isFilterSectionDisplayed();
-                videoCardPage.isAnyFilterExisted();*/
+            case "VideoCardPage" : catalogNavigatorPage.goToVideoCardPage();
+                basePage.isPageOpened("VideoCardPage");
                 break;
-            case "HeadphonesPage" : HeadphonesPage headphonesPage = catalogNavigatorPage.goToHeadphonesPage();
-                /*headphonesPage.isHeadphonesPageOpened();
-                headphonesPage.isProductsDisplayed();
-                headphonesPage.isFilterSectionDisplayed();
-                headphonesPage.isAnyFilterExisted();*/
+            case "HeadphonesPage" : catalogNavigatorPage.goToHeadphonesPage();
+                basePage.isPageOpened("HeadphonesPage");
                 break;
-            case "StrollersPage" : StrollersPage strollersPage = catalogNavigatorPage.goToStrollersPage();
-                /*strollersPage.isHeaterPageOpened();
-                strollersPage.isProductsDisplayed();
-                strollersPage.isFilterSectionDisplayed();
-                strollersPage.isAnyFilterExisted();*/
+            case "StrollersPage" : catalogNavigatorPage.goToStrollersPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "MobilePage" : MobilePage mobilePage = catalogNavigatorPage.goToMobilePage();
-                /*mobilePage.isMobilePageOpened();
-                mobilePage.isProductsDisplayed();
-                mobilePage.isFilterSectionDisplayed();
-                mobilePage.isAnyFilterExisted();*/
+            case "MobilePage" : catalogNavigatorPage.goToMobilePage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "NotebookPage" : NotebookPage notebookPage = catalogNavigatorPage.goToNotebookPage();
-                /*notebookPage.isNotebookPageOpened();
-                notebookPage.isProductsDisplayed();
-                notebookPage.isFilterSectionDisplayed();
-                notebookPage.isAnyFilterExisted();*/
+            case "NotebookPage" : catalogNavigatorPage.goToNotebookPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "PhotoPage" : PhotoPage photoPage = catalogNavigatorPage.goToPhotoPage();
-                /*photoPage.isPhotoPageOpened();
-                photoPage.isProductsDisplayed();
-                photoPage.isFilterSectionDisplayed();
-                photoPage.isAnyFilterExisted();*/
+            case "PhotoPage" : catalogNavigatorPage.goToPhotoPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "MotorOilPage" : MotorOilPage motorOilPage = catalogNavigatorPage.goToMotorOilPage();
-                /*motorOilPage.isRefrigeratorPageOpened();
-                motorOilPage.isProductsDisplayed();
-                motorOilPage.isFilterSectionDisplayed();
-                motorOilPage.isAnyFilterExisted();*/
+            case "MotorOilPage" : catalogNavigatorPage.goToMotorOilPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "TabletPcPage" : TabletPcPage tabletPcPage = catalogNavigatorPage.goToTabletPcPage();
-                /*tabletPcPage.isTabletPcPageOpened();
-                tabletPcPage.isProductsDisplayed();
-                tabletPcPage.isFilterSectionDisplayed();
-                tabletPcPage.isAnyFilterExisted();*/
+            case "TabletPcPage" : catalogNavigatorPage.goToTabletPcPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "TiresPage" : TiresPage tiresPage = catalogNavigatorPage.goToTiresPage();
-                /*tiresPage.isTiresPageOpened();
-                tiresPage.isProductsDisplayed();
-                tiresPage.isFilterSectionDisplayed();
-                tiresPage.isAnyFilterExisted();*/
+            case "TiresPage" : catalogNavigatorPage.goToTiresPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
-            case "SmartWatchPage" : SmartWatchPage smartWatchPage = catalogNavigatorPage.goToSmartWatchPage();
-                /*smartWatchPage.isSmartWatchPageOpened();
-                smartWatchPage.isProductsDisplayed();
-                smartWatchPage.isFilterSectionDisplayed();
-                smartWatchPage.isAnyFilterExisted();*/
+            case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
+                basePage.isPageOpened("BicyclePage");
                 break;
         }
+        basePage.isAnyFilterExisted();
+        basePage.isFilterSectionDisplayed();
+        basePage.isProductsDisplayed();
     }
 
     @Test(priority = 1)

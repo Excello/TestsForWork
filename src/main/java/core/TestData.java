@@ -1,14 +1,9 @@
 package core;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,12 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class TestData {
     //TODO Зачем создавать эту пустую и нерабочую реализацию???
     //FIX: Done
-    private WebDriver driver = null;
-
-    public WebDriver getDriver() {
-        return driver;
-    }
-
+    public WebDriver driver = null;
     private static final String URL_MAIN_PAGE = "https://catalog.onliner.by/";
 
     @BeforeMethod
