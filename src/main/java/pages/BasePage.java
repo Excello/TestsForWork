@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+//TODO Этот класс должен быть абстрактным
 public class BasePage {
-    //TODO Зачем создавать эту пустую и нерабочую реализацию??? [Done]
+
     public WebDriver driver = null;
 
     private static By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
@@ -17,7 +18,7 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void isPageOpened(String pageName){
+    public void isPageOpened(String pageName){//TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
 
         switch (pageName) {
             case "BicyclePage" : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));

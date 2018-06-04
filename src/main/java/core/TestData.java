@@ -10,8 +10,6 @@ import java.util.concurrent.TimeUnit;
  * Created by Englich on 11.11.2017.
  */
 public class TestData {
-    //TODO Зачем создавать эту пустую и нерабочую реализацию???
-    //FIX: Done
     public WebDriver driver = null;
     private static final String URL_MAIN_PAGE = "https://catalog.onliner.by/";
 

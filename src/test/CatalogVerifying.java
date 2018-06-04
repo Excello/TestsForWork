@@ -10,16 +10,12 @@ public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
         BasePage basePage = new BasePage(driver);
-        //TODO
-        //1. В switch оставить только переход на страницу. вызов isProductsDisplayed, isFilterSectionDisplayed, isAnyFilterExisted сделать за switch (Done)
-        //2. Не нравится привязка к текстовому имени класса. Лучше напрямую делать например BicyclePage.class.getSimpleName() (Done)
-        //3. В действительности лучше сдедать в catalogNavigatorPage метод openSubCatalog(Class catalogClass)
         switch (pageName) {
             case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
                 basePage.isPageOpened("BicyclePage");
                 break;
             case "VideoCardPage" : catalogNavigatorPage.goToVideoCardPage();
-                basePage.isPageOpened("VideoCardPage");
+                basePage.isPageOpened("VideoCardPage");//TODO Этот метод тоже за switch
                 break;
             case "HeadphonesPage" : catalogNavigatorPage.goToHeadphonesPage();
                 basePage.isPageOpened("HeadphonesPage");
