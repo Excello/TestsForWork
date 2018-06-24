@@ -20,11 +20,13 @@ public class CatalogNavigatorPage extends BasePage {
     private static By HEADPHONES_PAGE_TAB = By.linkText("Наушники и гарнитуры");
     private static By BICYCLE_PAGE_TAB = By.linkText("Велосипеды");
 
-    public CatalogNavigatorPage(WebDriver driver) {
-        super(driver);
+    public CatalogNavigatorPage(By identifyElementLocator, WebDriver driver) {
+        super(identifyElementLocator, driver);
     }
 
+
     public MobilePage goToMobilePage() {
+
         driver.findElement(MOBILE_PAGE_TAB).click();
         return new MobilePage(driver);
     }
@@ -78,6 +80,11 @@ public class CatalogNavigatorPage extends BasePage {
 
     public BicyclePage goToBicyclePage() {
         driver.findElement(BICYCLE_PAGE_TAB).click();
-        return new BicyclePage(driver);
+        return new BicyclePage(PHOTO_PAGE_TAB, driver);
+    }
+
+    @Override
+    public void isPageOpened() {
+
     }
 }

@@ -12,4 +12,9 @@ public class MobilePage extends BasePage {
     public MobilePage(WebDriver driver) {
         super(driver);
     }
+
+    @Override
+    public void isPageOpened() {
+
+    }
 }

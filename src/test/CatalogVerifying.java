@@ -9,42 +9,32 @@ import pages.*;
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
-        BasePage basePage = new BasePage(driver);
+        //BasePage basePage = new BasePage(driver);
         switch (pageName) {
             case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
-                basePage.isPageOpened("BicyclePage");
                 break;
             case "VideoCardPage" : catalogNavigatorPage.goToVideoCardPage();
-                basePage.isPageOpened("VideoCardPage");//TODO Этот метод тоже за switch
                 break;
             case "HeadphonesPage" : catalogNavigatorPage.goToHeadphonesPage();
-                basePage.isPageOpened("HeadphonesPage");
                 break;
             case "StrollersPage" : catalogNavigatorPage.goToStrollersPage();
-                basePage.isPageOpened("StrollersPage");
                 break;
             case "MobilePage" : catalogNavigatorPage.goToMobilePage();
-                basePage.isPageOpened("MobilePage");
                 break;
             case "NotebookPage" : catalogNavigatorPage.goToNotebookPage();
-                basePage.isPageOpened("NotebookPage");
                 break;
             case "PhotoPage" : catalogNavigatorPage.goToPhotoPage();
-                basePage.isPageOpened("PhotoPage");
                 break;
             case "MotorOilPage" : catalogNavigatorPage.goToMotorOilPage();
-                basePage.isPageOpened("MotorOilPage");
                 break;
             case "TabletPcPage" : catalogNavigatorPage.goToTabletPcPage();
-                basePage.isPageOpened("TabletPcPage");
                 break;
             case "TiresPage" : catalogNavigatorPage.goToTiresPage();
-                basePage.isPageOpened("TiresPage");
                 break;
             case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
-                basePage.isPageOpened("SmartWatchPage");
                 break;
         }
+        basePage.isPageOpened("BicyclePage"); //TODO Этот метод тоже за switch
         basePage.isAnyFilterExisted();
         basePage.isFilterSectionDisplayed();
         basePage.isProductsDisplayed();

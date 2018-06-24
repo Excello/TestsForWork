@@ -4,24 +4,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-//TODO Этот класс должен быть абстрактным
-public class BasePage {
+//TODO Этот класс должен быть абстрактным - done
+public abstract class BasePage {
 
-    public WebDriver driver = null;
+    public final WebDriver driver;
 
     private static By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
     private static By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
     private static By COMMON_CATALOG_FILTERS = By.id("schema-filter");
     private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
+    private final By identifyElementLocator;
 
-    public BasePage(WebDriver driver) {
+    protected BasePage(By identifyElementLocator, WebDriver driver) {
         this.driver = driver;
+        this.identifyElementLocator = identifyElementLocator;
     }
-
-    public void isPageOpened(String pageName){//TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
-
-        switch (pageName) {
-            case "BicyclePage" : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));
+    //TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
+    private By isPageOpened(By identifyElementLocator) {
+        switch (identifyElementLocator) {
+            case identifyElementLocator = By.className("asdas"); : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));
                 break;
             case "VideoCardPage" :Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Видеокарты"));
                 break;
@@ -44,11 +45,11 @@ public class BasePage {
             case "SmartWatchPage" : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Умные часы и браслеты"));
                 break;
         }
+        return identifyElementLocator;
     }
 
-     public BasePage isProductsDisplayed(){
+    public void isProductsDisplayed(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
-        return new BasePage(driver);
     }
 
     public BasePage isFilterSectionDisplayed(){
