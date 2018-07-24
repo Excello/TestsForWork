@@ -12,8 +12,13 @@ public class CatalogVerifying extends TestData {
         final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
         final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(identifyElementLocatorCatalog,driver );
-        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(identifyElementLocatorCatalogProducts, driver);
-        catalogNavigatorPage.isPageOpened(driver, identifyElementLocatorCatalog);
+        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(identifyElementLocatorCatalogProducts, driver) {
+            @Override
+            public boolean isPageOpened() {
+                return super.isPageOpened();
+            }
+        };
+        catalogNavigatorPage.isPageOpened();
         switch (pageName) {
             case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
                 break;
@@ -38,7 +43,7 @@ public class CatalogVerifying extends TestData {
             case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
                 break;
         }
-        baseCatalogProductsPage.isPageOpened(driver, identifyElementLocatorCatalogProducts); //TODO Этот метод тоже за switch
+        baseCatalogProductsPage.isPageOpened(); //TODO Этот метод тоже за switch
         baseCatalogProductsPage.isAnyFilterExisted();
         baseCatalogProductsPage.isFilterSectionDisplayed();
         baseCatalogProductsPage.isProductsDisplayed();

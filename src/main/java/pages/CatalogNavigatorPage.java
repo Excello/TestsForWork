@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 /**
@@ -27,9 +28,10 @@ public class CatalogNavigatorPage extends BasePage {
     }
 
     @Override
-    public boolean isPageOpened(WebDriver driver, By identifyElementLocator) {
+    public boolean isPageOpened() {
         try {
-            Assert.assertTrue(driver.findElement(identifyElementLocator).getText().contains("Каталог"));
+            WebElement pageTitle = driver.findElement(By.cssSelector(".catalog-navigation__title"));
+            Assert.assertTrue(pageTitle.getText().contains("Каталог"));
             System.out.println("Catalog page was displayed");
             return true;
         } catch (NoSuchElementException e) {
@@ -38,47 +40,58 @@ public class CatalogNavigatorPage extends BasePage {
         }
     }
 
-    public void goToMobilePage() {
+    public MobilePage goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
+        return new MobilePage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToTabletPcPage() {
+    public TabletPcPage goToTabletPcPage() {
         driver.findElement(TABLET_PC_PAGE_TAB).click();
+        return new TabletPcPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToNotebookPage() {
-        getDriver().findElement(NOTEBOOK_PAGE_TAB).click();
+    public NotebookPage goToNotebookPage() {
+        driver.findElement(NOTEBOOK_PAGE_TAB).click();
+        return new NotebookPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToSmartWatchPage() {
-        getDriver().findElement(SMART_WATCH_PAGE_TAB).click();
+    public SmartWatchPage goToSmartWatchPage() {
+        driver.findElement(SMART_WATCH_PAGE_TAB).click();
+        return new SmartWatchPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToPhotoPage() {
-        getDriver().findElement(PHOTO_PAGE_TAB).click();
+    public PhotoPage goToPhotoPage() {
+        driver.findElement(PHOTO_PAGE_TAB).click();
+        return new PhotoPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToTiresPage() {
-        getDriver().findElement(TIRES_PAGE_TAB).click();
+    public TiresPage goToTiresPage() {
+        driver.findElement(TIRES_PAGE_TAB).click();
+        return new TiresPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToMotorOilPage() {
-        getDriver().findElement(MOTOR_OIL_PAGE_TAB).click();
+    public MotorOilPage goToMotorOilPage() {
+        driver.findElement(MOTOR_OIL_PAGE_TAB).click();
+        return new MotorOilPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToStrollersPage() {
-        getDriver().findElement(STROLLERS_PAGE_TAB).click();
+    public StrollersPage goToStrollersPage() {
+        driver.findElement(STROLLERS_PAGE_TAB).click();
+        return new StrollersPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToVideoCardPage() {
-        getDriver().findElement(VIDEO_CARD_PAGE_TAB).click();
+    public VideoCardPage goToVideoCardPage() {
+        driver.findElement(VIDEO_CARD_PAGE_TAB).click();
+        return new VideoCardPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToHeadphonesPage() {
-        getDriver().findElement(HEADPHONES_PAGE_TAB).click();
+    public HeadphonesPage goToHeadphonesPage() {
+        driver.findElement(HEADPHONES_PAGE_TAB).click();
+        return new HeadphonesPage(By.cssSelector(".schema-header__title"), driver);
     }
 
-    public void goToBicyclePage() {
-        getDriver().findElement(BICYCLE_PAGE_TAB).click();
+    public BicyclePage goToBicyclePage() {
+        driver.findElement(BICYCLE_PAGE_TAB).click();
+        return new BicyclePage(By.cssSelector(".schema-header__title"), driver);
     }
 }

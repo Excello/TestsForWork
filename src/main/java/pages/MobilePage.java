@@ -8,8 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-class MobilePage extends BaseCatalogProductsPage {
-    MobilePage(By identifyElementLocator, WebDriver d) {
+public class MobilePage extends BaseCatalogProductsPage {
+    public MobilePage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

@@ -5,8 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 //TODO Этот класс должен быть абстрактным - done
-abstract class BasePage {
+abstract public class BasePage {
     protected final WebDriver driver;
+
+    public By getIdentifyElementLocator() {
+        return identifyElementLocator;
+    }
 
     private final By identifyElementLocator;
     //private final By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
@@ -19,12 +23,13 @@ abstract class BasePage {
         this.identifyElementLocator = identifyElementLocator;
     }
 
-    protected WebDriver getDriver() {
+
+   /* protected WebDriver getDriver() {
         return driver;
-    }
+    }*/
 
     //TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
-    public abstract boolean isPageOpened(WebDriver driver, By identifyElementLocator); /*{
+    public abstract boolean isPageOpened(); /*{
         switch (identifyElementLocator) {
             case By.className("asd"): Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));
                 break;
