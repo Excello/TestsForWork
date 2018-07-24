@@ -38,58 +38,47 @@ public class CatalogNavigatorPage extends BasePage {
         }
     }
 
-    public MobilePage goToMobilePage() {
+    public void goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
-        return new MobilePage(By.className("SmartWatchPage"), driver);
     }
 
-    public TabletPcPage goToTabletPcPage() {
+    public void goToTabletPcPage() {
         driver.findElement(TABLET_PC_PAGE_TAB).click();
-        return new TabletPcPage(By.className("TabletPcPage"), driver);
     }
 
-    public NotebookPage goToNotebookPage() {
+    public void goToNotebookPage() {
         getDriver().findElement(NOTEBOOK_PAGE_TAB).click();
-        return new NotebookPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public SmartWatchPage goToSmartWatchPage() {
+    public void goToSmartWatchPage() {
         getDriver().findElement(SMART_WATCH_PAGE_TAB).click();
-        return new SmartWatchPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public PhotoPage goToPhotoPage() {
+    public void goToPhotoPage() {
         getDriver().findElement(PHOTO_PAGE_TAB).click();
-        return new PhotoPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public TiresPage goToTiresPage() {
+    public void goToTiresPage() {
         getDriver().findElement(TIRES_PAGE_TAB).click();
-        return new TiresPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public MotorOilPage goToMotorOilPage() {
+    public void goToMotorOilPage() {
         getDriver().findElement(MOTOR_OIL_PAGE_TAB).click();
-        return new MotorOilPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public StrollersPage goToStrollersPage() {
+    public void goToStrollersPage() {
         getDriver().findElement(STROLLERS_PAGE_TAB).click();
-        return new StrollersPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public VideoCardPage goToVideoCardPage() {
+    public void goToVideoCardPage() {
         getDriver().findElement(VIDEO_CARD_PAGE_TAB).click();
-        return new VideoCardPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public HeadphonesPage goToHeadphonesPage() {
+    public void goToHeadphonesPage() {
         getDriver().findElement(HEADPHONES_PAGE_TAB).click();
-        return new HeadphonesPage(By.className("SmartWatchPage"), getDriver());
     }
 
-    public BicyclePage goToBicyclePage() {
+    public void goToBicyclePage() {
         getDriver().findElement(BICYCLE_PAGE_TAB).click();
-        return new BicyclePage(By.className("SmartWatchPage"), getDriver());
     }
 }
