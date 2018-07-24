@@ -8,9 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-public class StrollersPage extends BasePage {
-
-    public StrollersPage(WebDriver driver) {
-        super(driver);
+class StrollersPage extends BaseCatalogProductsPage {
+    StrollersPage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
 }

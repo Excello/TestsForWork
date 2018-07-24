@@ -8,10 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-public class TabletPcPage extends BasePage {
-
-    public TabletPcPage(WebDriver driver) {
-        super(driver);
+class TabletPcPage extends BaseCatalogProductsPage {
+    TabletPcPage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
-
 }

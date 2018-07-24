@@ -8,9 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-public class SmartWatchPage extends BasePage {
-
-    public SmartWatchPage(WebDriver driver) {
-        super(driver);
+class SmartWatchPage extends BaseCatalogProductsPage {
+    SmartWatchPage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
 }

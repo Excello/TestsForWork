@@ -8,16 +8,8 @@ import org.openqa.selenium.WebDriver;
  * Created by Englich on 11.11.2017.
  *
  */
-public class BicyclePage extends BasePage {
-
-
-    protected BicyclePage(By identifyElementLocator, WebDriver driver) {
-        super(identifyElementLocator, driver);
-    }
-
-
-    @Override
-    public void isPageOpened() {
-
+class BicyclePage extends BaseCatalogProductsPage {
+    BicyclePage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
 }

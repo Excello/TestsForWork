@@ -8,9 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-public class PhotoPage extends BasePage {
-
-    public PhotoPage(WebDriver driver) {
-        super(driver);
+class PhotoPage extends BaseCatalogProductsPage {
+    PhotoPage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
 }

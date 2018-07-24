@@ -5,26 +5,30 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 //TODO Этот класс должен быть абстрактным - done
-public abstract class BasePage {
+abstract class BasePage {
+    protected final WebDriver driver;
 
-    public final WebDriver driver;
-
-    private static By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    private static By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
-    private static By COMMON_CATALOG_FILTERS = By.id("schema-filter");
-    private static By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
     private final By identifyElementLocator;
+    //private final By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
+    private final By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
+    private final By COMMON_CATALOG_FILTERS = By.id("schema-filter");
+    private final By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
-    protected BasePage(By identifyElementLocator, WebDriver driver) {
-        this.driver = driver;
+    protected BasePage(By identifyElementLocator, WebDriver d) {
+        this.driver = d;
         this.identifyElementLocator = identifyElementLocator;
     }
+
+    protected WebDriver getDriver() {
+        return driver;
+    }
+
     //TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
-    private By isPageOpened(By identifyElementLocator) {
+    public abstract boolean isPageOpened(WebDriver driver, By identifyElementLocator); /*{
         switch (identifyElementLocator) {
-            case identifyElementLocator = By.className("asdas"); : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));
+            case By.className("asd"): Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));
                 break;
-            case "VideoCardPage" :Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Видеокарты"));
+            *//*case "VideoCardPage" :Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Видеокарты"));
                 break;
             case "HeadphonesPage" : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Наушники и гарнитуры"));
                 break;
@@ -44,21 +48,22 @@ public abstract class BasePage {
                 break;
             case "SmartWatchPage" : Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Умные часы и браслеты"));
                 break;
-        }
+        }*//*
         return identifyElementLocator;
-    }
+    }*/
 
-    public void isProductsDisplayed(){
+    public BasePage isProductsDisplayed(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
+        return this;
     }
 
     public BasePage isFilterSectionDisplayed(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
-        return new BasePage(driver);
+        return this;
     }
 
     public BasePage isAnyFilterExisted(){
         Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
-        return new BasePage(driver);
+        return this;
     }
 }

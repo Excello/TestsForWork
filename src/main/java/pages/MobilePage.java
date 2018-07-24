@@ -8,13 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-public class MobilePage extends BasePage {
-    public MobilePage(WebDriver driver) {
-        super(driver);
-    }
-
-    @Override
-    public void isPageOpened() {
-
+class MobilePage extends BaseCatalogProductsPage {
+    MobilePage(By identifyElementLocator, WebDriver d) {
+        super(identifyElementLocator, d);
     }
 }

@@ -1,4 +1,5 @@
 import core.TestData;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -8,8 +9,11 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(driver);
-        //BasePage basePage = new BasePage(driver);
+        final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
+        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(identifyElementLocatorCatalog,driver );
+        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(identifyElementLocatorCatalogProducts, driver);
+        catalogNavigatorPage.isPageOpened(driver, identifyElementLocatorCatalog);
         switch (pageName) {
             case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
                 break;
@@ -34,10 +38,10 @@ public class CatalogVerifying extends TestData {
             case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
                 break;
         }
-        basePage.isPageOpened("BicyclePage"); //TODO Этот метод тоже за switch
-        basePage.isAnyFilterExisted();
-        basePage.isFilterSectionDisplayed();
-        basePage.isProductsDisplayed();
+        baseCatalogProductsPage.isPageOpened(driver, identifyElementLocatorCatalogProducts); //TODO Этот метод тоже за switch
+        baseCatalogProductsPage.isAnyFilterExisted();
+        baseCatalogProductsPage.isFilterSectionDisplayed();
+        baseCatalogProductsPage.isProductsDisplayed();
     }
 
     @Test(priority = 1)
