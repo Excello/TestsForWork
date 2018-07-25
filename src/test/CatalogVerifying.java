@@ -12,6 +12,7 @@ public class CatalogVerifying extends TestData {
         /*final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
         final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");*/
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"),driver );
+        //TODO Убрать. Класс для того и сделан абстрактным, чтобы не создавать его
         BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(By.cssSelector(".schema-header__title"), driver) {
             @Override
             public boolean isPageOpened() {
@@ -43,7 +44,7 @@ public class CatalogVerifying extends TestData {
             case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
                 break;
         }
-        baseCatalogProductsPage.isPageOpened(); //TODO Этот метод тоже за switch
+        baseCatalogProductsPage.isPageOpened();
         baseCatalogProductsPage.isAnyFilterExisted();
         baseCatalogProductsPage.isFilterSectionDisplayed();
         baseCatalogProductsPage.isProductsDisplayed();

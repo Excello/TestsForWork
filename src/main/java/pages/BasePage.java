@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-//TODO Этот класс должен быть абстрактным - done
 abstract public class BasePage {
     protected final WebDriver driver;
-    private final By identifyElementLocator;
+    private final By identifyElementLocator; //TODO Зачем этот параметр, если он нигде не используется?
+
     public By getIdentifyElementLocator() {
         return identifyElementLocator;
     }
@@ -18,11 +18,11 @@ abstract public class BasePage {
         this.identifyElementLocator = identifyElementLocator;
     }
 
+    //TODO Это лучше вернуть, а поле сделать private
    /* protected WebDriver getDriver() {
         return driver;
     }*/
 
-    //TODO Нет. В класс добавить private final By identifyElementLocator; Сделать конструктор: protected BasePage(By, WebDriver)
     public abstract boolean isPageOpened(); /*{
         switch (identifyElementLocator) {
             case By.className("asd"): Assert.assertTrue(driver.findElement(BASE_PAGE_TITLE).getText().contains("Велосипеды"));

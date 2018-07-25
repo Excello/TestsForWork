@@ -43,7 +43,7 @@ public class CatalogNavigatorPage extends BasePage {
     public MobilePage goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
         System.out.println("Mobile page is opening");
-        return new MobilePage(By.cssSelector(".schema-header__title"), driver);
+        return new MobilePage(By.cssSelector(".schema-header__title"), driver);//TODO By.cssSelector(".schema-header__title") передается во все страницы = дублирование кода
     }
 
     public TabletPcPage goToTabletPcPage() {
