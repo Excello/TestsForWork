@@ -9,10 +9,10 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
-        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(identifyElementLocatorCatalog,driver );
-        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(identifyElementLocatorCatalogProducts, driver) {
+        /*final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
+        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");*/
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"),driver );
+        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(By.cssSelector(".schema-header__title"), driver) {
             @Override
             public boolean isPageOpened() {
                 return super.isPageOpened();

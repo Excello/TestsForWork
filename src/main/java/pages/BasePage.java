@@ -2,27 +2,21 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 //TODO Этот класс должен быть абстрактным - done
 abstract public class BasePage {
     protected final WebDriver driver;
-
+    private final By identifyElementLocator;
     public By getIdentifyElementLocator() {
         return identifyElementLocator;
     }
 
-    private final By identifyElementLocator;
     //private final By BASE_PAGE_TITLE = By.cssSelector(".schema-header__title");
-    private final By COMMON_CATALOG_PAGE_ITEMS = By.id("schema-products");
-    private final By COMMON_CATALOG_FILTERS = By.id("schema-filter");
-    private final By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
     protected BasePage(By identifyElementLocator, WebDriver d) {
         this.driver = d;
         this.identifyElementLocator = identifyElementLocator;
     }
-
 
    /* protected WebDriver getDriver() {
         return driver;
@@ -56,19 +50,4 @@ abstract public class BasePage {
         }*//*
         return identifyElementLocator;
     }*/
-
-    public BasePage isProductsDisplayed(){
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
-        return this;
-    }
-
-    public BasePage isFilterSectionDisplayed(){
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
-        return this;
-    }
-
-    public BasePage isAnyFilterExisted(){
-        Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
-        return this;
-    }
 }

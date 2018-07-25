@@ -42,56 +42,67 @@ public class CatalogNavigatorPage extends BasePage {
 
     public MobilePage goToMobilePage() {
         driver.findElement(MOBILE_PAGE_TAB).click();
+        System.out.println("Mobile page is opening");
         return new MobilePage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public TabletPcPage goToTabletPcPage() {
         driver.findElement(TABLET_PC_PAGE_TAB).click();
+        System.out.println("TabletPc page is opening");
         return new TabletPcPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public NotebookPage goToNotebookPage() {
         driver.findElement(NOTEBOOK_PAGE_TAB).click();
+        System.out.println("Notebook page is opening");
         return new NotebookPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public SmartWatchPage goToSmartWatchPage() {
         driver.findElement(SMART_WATCH_PAGE_TAB).click();
+        System.out.println("SmartWatch page is opening");
         return new SmartWatchPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public PhotoPage goToPhotoPage() {
         driver.findElement(PHOTO_PAGE_TAB).click();
+        System.out.println("Photo page is opening");
         return new PhotoPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public TiresPage goToTiresPage() {
         driver.findElement(TIRES_PAGE_TAB).click();
+        System.out.println("Tires page is opening");
         return new TiresPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public MotorOilPage goToMotorOilPage() {
         driver.findElement(MOTOR_OIL_PAGE_TAB).click();
+        System.out.println("MotorOil page is opening");
         return new MotorOilPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public StrollersPage goToStrollersPage() {
         driver.findElement(STROLLERS_PAGE_TAB).click();
+        System.out.println("Strollers page is opening");
         return new StrollersPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public VideoCardPage goToVideoCardPage() {
         driver.findElement(VIDEO_CARD_PAGE_TAB).click();
+        System.out.println("VideoCard page is opening");
         return new VideoCardPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public HeadphonesPage goToHeadphonesPage() {
         driver.findElement(HEADPHONES_PAGE_TAB).click();
+        System.out.println("Headphones page is opening");
         return new HeadphonesPage(By.cssSelector(".schema-header__title"), driver);
     }
 
     public BicyclePage goToBicyclePage() {
         driver.findElement(BICYCLE_PAGE_TAB).click();
+        System.out.println("Bicycle page is opening");
         return new BicyclePage(By.cssSelector(".schema-header__title"), driver);
     }
 }
