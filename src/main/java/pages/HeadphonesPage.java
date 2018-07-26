@@ -8,8 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-class HeadphonesPage extends BaseCatalogProductsPage {
-    HeadphonesPage(By identifyElementLocator, WebDriver d) {
+public class HeadphonesPage extends BaseCatalogProductsPage {
+    public HeadphonesPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

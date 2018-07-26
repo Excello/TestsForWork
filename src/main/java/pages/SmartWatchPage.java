@@ -9,7 +9,7 @@ import org.testng.Assert;
  *
  */
 class SmartWatchPage extends BaseCatalogProductsPage {
-    SmartWatchPage(By identifyElementLocator, WebDriver d) {
+    public SmartWatchPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

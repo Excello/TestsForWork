@@ -8,8 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-class TiresPage extends BaseCatalogProductsPage {
-    TiresPage(By identifyElementLocator, WebDriver d) {
+public class TiresPage extends BaseCatalogProductsPage {
+    public TiresPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

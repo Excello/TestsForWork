@@ -18,7 +18,7 @@ abstract public class BaseCatalogProductsPage extends BasePage{
     @Override
     public boolean isPageOpened() {
         try {
-            WebElement pageTitle = driver.findElement(By.cssSelector(".schema-header__title"));
+            WebElement pageTitle = getDriver().findElement(getIdentifyElementLocator());
             Assert.assertTrue(pageTitle.isDisplayed());
             System.out.println("Page was displayed");
             return true;
@@ -30,7 +30,7 @@ abstract public class BaseCatalogProductsPage extends BasePage{
 
     public BaseCatalogProductsPage isProductsDisplayed(){
         try {
-            Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
+            Assert.assertTrue(getDriver().findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());
             System.out.println("Products were displayed");
             return this;
         } catch (NoSuchElementException e) {
@@ -41,7 +41,7 @@ abstract public class BaseCatalogProductsPage extends BasePage{
 
     public BaseCatalogProductsPage isFilterSectionDisplayed(){
         try {
-            Assert.assertTrue(driver.findElement(COMMON_CATALOG_FILTERS).isDisplayed());
+            Assert.assertTrue(getDriver().findElement(COMMON_CATALOG_FILTERS).isDisplayed());
             System.out.println("Filter section was displayed");
             return this;
         } catch (NoSuchElementException e) {
@@ -52,7 +52,7 @@ abstract public class BaseCatalogProductsPage extends BasePage{
 
     public BaseCatalogProductsPage isAnyFilterExisted(){
         try {
-            Assert.assertTrue(driver.findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
+            Assert.assertTrue(getDriver().findElement(COMMON_CATALOG_PAGE_ANY_FILTER).isDisplayed());
             System.out.println("Any filter was displayed");
             return this;
         } catch (NoSuchElementException e) {

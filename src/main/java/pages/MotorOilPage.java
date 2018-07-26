@@ -8,8 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-class MotorOilPage extends BaseCatalogProductsPage {
-    MotorOilPage(By identifyElementLocator, WebDriver d) {
+public class MotorOilPage extends BaseCatalogProductsPage {
+   public MotorOilPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

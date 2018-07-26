@@ -9,16 +9,20 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        /*final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
-        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");*/
+        //final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
+        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"),driver );
+        MobilePage mobilePage = new MobilePage(identifyElementLocatorCatalogProducts, driver);
+        TiresPage tiresPage = new TiresPage(identifyElementLocatorCatalogProducts, driver);
+
+        BicyclePage bicyclePage = new BicyclePage(identifyElementLocatorCatalogProducts, driver);
         //TODO Убрать. Класс для того и сделан абстрактным, чтобы не создавать его
-        BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(By.cssSelector(".schema-header__title"), driver) {
+        /*BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(By.cssSelector(".schema-header__title"), driver) {
             @Override
             public boolean isPageOpened() {
                 return super.isPageOpened();
             }
-        };
+        };*/
         catalogNavigatorPage.isPageOpened();
         switch (pageName) {
             case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
@@ -44,7 +48,7 @@ public class CatalogVerifying extends TestData {
             case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
                 break;
         }
-        baseCatalogProductsPage.isPageOpened();
+        mobilePage.isPageOpened();
         baseCatalogProductsPage.isAnyFilterExisted();
         baseCatalogProductsPage.isFilterSectionDisplayed();
         baseCatalogProductsPage.isProductsDisplayed();

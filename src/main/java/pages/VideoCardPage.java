@@ -8,8 +8,8 @@ import org.testng.Assert;
  * Created by Englich on 11.11.2017.
  *
  */
-class VideoCardPage extends BaseCatalogProductsPage {
-    VideoCardPage(By identifyElementLocator, WebDriver d) {
+public class VideoCardPage extends BaseCatalogProductsPage {
+    public VideoCardPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

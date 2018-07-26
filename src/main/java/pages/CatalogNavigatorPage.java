@@ -30,7 +30,7 @@ public class CatalogNavigatorPage extends BasePage {
     @Override
     public boolean isPageOpened() {
         try {
-            WebElement pageTitle = driver.findElement(By.cssSelector(".catalog-navigation__title"));
+            WebElement pageTitle = getDriver().findElement(By.cssSelector(".catalog-navigation__title"));
             Assert.assertTrue(pageTitle.getText().contains("Каталог"));
             System.out.println("Catalog page was displayed");
             return true;
@@ -41,68 +41,68 @@ public class CatalogNavigatorPage extends BasePage {
     }
 
     public MobilePage goToMobilePage() {
-        driver.findElement(MOBILE_PAGE_TAB).click();
+        getDriver().findElement(MOBILE_PAGE_TAB).click();
         System.out.println("Mobile page is opening");
-        return new MobilePage(By.cssSelector(".schema-header__title"), driver);//TODO By.cssSelector(".schema-header__title") передается во все страницы = дублирование кода
+        return new MobilePage(getIdentifyElementLocator(), getDriver());//TODO By.cssSelector(".schema-header__title") передается во все страницы = дублирование кода
     }
 
     public TabletPcPage goToTabletPcPage() {
-        driver.findElement(TABLET_PC_PAGE_TAB).click();
+        getDriver().findElement(TABLET_PC_PAGE_TAB).click();
         System.out.println("TabletPc page is opening");
-        return new TabletPcPage(By.cssSelector(".schema-header__title"), driver);
+        return new TabletPcPage(getIdentifyElementLocator(), getDriver());
     }
 
     public NotebookPage goToNotebookPage() {
-        driver.findElement(NOTEBOOK_PAGE_TAB).click();
+        getDriver().findElement(NOTEBOOK_PAGE_TAB).click();
         System.out.println("Notebook page is opening");
-        return new NotebookPage(By.cssSelector(".schema-header__title"), driver);
+        return new NotebookPage(getIdentifyElementLocator(), getDriver());
     }
 
     public SmartWatchPage goToSmartWatchPage() {
-        driver.findElement(SMART_WATCH_PAGE_TAB).click();
+        getDriver().findElement(SMART_WATCH_PAGE_TAB).click();
         System.out.println("SmartWatch page is opening");
-        return new SmartWatchPage(By.cssSelector(".schema-header__title"), driver);
+        return new SmartWatchPage(getIdentifyElementLocator(), getDriver());
     }
 
     public PhotoPage goToPhotoPage() {
-        driver.findElement(PHOTO_PAGE_TAB).click();
+        getDriver().findElement(PHOTO_PAGE_TAB).click();
         System.out.println("Photo page is opening");
-        return new PhotoPage(By.cssSelector(".schema-header__title"), driver);
+        return new PhotoPage(getIdentifyElementLocator(), getDriver());
     }
 
     public TiresPage goToTiresPage() {
-        driver.findElement(TIRES_PAGE_TAB).click();
+        getDriver().findElement(TIRES_PAGE_TAB).click();
         System.out.println("Tires page is opening");
-        return new TiresPage(By.cssSelector(".schema-header__title"), driver);
+        return new TiresPage(getIdentifyElementLocator(), getDriver());
     }
 
     public MotorOilPage goToMotorOilPage() {
-        driver.findElement(MOTOR_OIL_PAGE_TAB).click();
+        getDriver().findElement(MOTOR_OIL_PAGE_TAB).click();
         System.out.println("MotorOil page is opening");
-        return new MotorOilPage(By.cssSelector(".schema-header__title"), driver);
+        return new MotorOilPage(getIdentifyElementLocator(), getDriver());
     }
 
     public StrollersPage goToStrollersPage() {
-        driver.findElement(STROLLERS_PAGE_TAB).click();
+        getDriver().findElement(STROLLERS_PAGE_TAB).click();
         System.out.println("Strollers page is opening");
-        return new StrollersPage(By.cssSelector(".schema-header__title"), driver);
+        return new StrollersPage(getIdentifyElementLocator(), getDriver());
     }
 
     public VideoCardPage goToVideoCardPage() {
-        driver.findElement(VIDEO_CARD_PAGE_TAB).click();
+        getDriver().findElement(VIDEO_CARD_PAGE_TAB).click();
         System.out.println("VideoCard page is opening");
-        return new VideoCardPage(By.cssSelector(".schema-header__title"), driver);
+        return new VideoCardPage(getIdentifyElementLocator(), getDriver());
     }
 
     public HeadphonesPage goToHeadphonesPage() {
-        driver.findElement(HEADPHONES_PAGE_TAB).click();
+        getDriver().findElement(HEADPHONES_PAGE_TAB).click();
         System.out.println("Headphones page is opening");
-        return new HeadphonesPage(By.cssSelector(".schema-header__title"), driver);
+        return new HeadphonesPage(getIdentifyElementLocator(), getDriver());
     }
 
     public BicyclePage goToBicyclePage() {
-        driver.findElement(BICYCLE_PAGE_TAB).click();
+        getDriver().findElement(BICYCLE_PAGE_TAB).click();
         System.out.println("Bicycle page is opening");
-        return new BicyclePage(By.cssSelector(".schema-header__title"), driver);
+        return new BicyclePage(getIdentifyElementLocator(), getDriver());
     }
 }

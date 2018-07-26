@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 abstract public class BasePage {
-    protected final WebDriver driver;
-    private final By identifyElementLocator; //TODO Зачем этот параметр, если он нигде не используется?
+    private final WebDriver driver;
+    private By identifyElementLocator = By.cssSelector(".schema-header__title"); //TODO Зачем этот параметр, если он нигде не используется?
 
     public By getIdentifyElementLocator() {
         return identifyElementLocator;
@@ -19,9 +19,9 @@ abstract public class BasePage {
     }
 
     //TODO Это лучше вернуть, а поле сделать private
-   /* protected WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
-    }*/
+    }
 
     public abstract boolean isPageOpened(); /*{
         switch (identifyElementLocator) {

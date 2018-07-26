@@ -9,7 +9,7 @@ import org.testng.Assert;
  *
  */
 class NotebookPage extends BaseCatalogProductsPage {
-    NotebookPage(By identifyElementLocator, WebDriver d) {
+    public NotebookPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }
