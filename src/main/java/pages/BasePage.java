@@ -1,12 +1,12 @@
 package pages;
 
-import core.Logger;
+import utilities.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage implements Base {
     private final WebDriver driver;
-    private Logger log = new Logger();
+    private Log log = new Log();
     private By identifyElementLocator = By.cssSelector(".schema-header__title"); //TODO Зачем этот параметр, если он нигде не используется?
 
     protected BasePage(By identifyElementLocator, WebDriver d) {
@@ -23,7 +23,7 @@ public abstract class BasePage implements Base {
         return identifyElementLocator;
     }
 
-    public Logger getLog() {
+    public Log getLog() {
         return log;
     }
 }

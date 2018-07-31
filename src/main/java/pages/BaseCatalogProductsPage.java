@@ -24,7 +24,7 @@ public abstract class BaseCatalogProductsPage extends BasePage {
             getLog().info("Page was displayed");
             return true;
         } catch (NoSuchElementException e) {
-            getLog().trace("Page was not displayed");
+            getLog().warn("Page was not displayed");
             return false;
         }
     }
@@ -35,7 +35,7 @@ public abstract class BaseCatalogProductsPage extends BasePage {
             getLog().info("Products were displayed");
             return this;
         } catch (NoSuchElementException e) {
-            getLog().trace("Products were not displayed");
+            getLog().warn("Products were not displayed");
             return null;
         }
     }
@@ -43,10 +43,10 @@ public abstract class BaseCatalogProductsPage extends BasePage {
     public BaseCatalogProductsPage isFilterSectionDisplayed() {
         try {
             Assert.assertTrue(getDriver().findElement(COMMON_CATALOG_FILTERS).isDisplayed());
-            getLog().trace("Filter section was displayed");
+            getLog().info("Filter section was displayed");
             return this;
         } catch (NoSuchElementException e) {
-            getLog().trace("Filter section was not displayed");
+            getLog().warn("Filter section was not displayed");
             return null;
         }
     }
@@ -57,7 +57,7 @@ public abstract class BaseCatalogProductsPage extends BasePage {
             getLog().info("Any filter was displayed");
             return this;
         } catch (NoSuchElementException e) {
-            getLog().trace("Any filter was not displayed");
+            getLog().warn("Any filter was not displayed");
             return null;
         }
     }

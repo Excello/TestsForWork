@@ -34,7 +34,7 @@ public class CatalogNavigatorPage extends BasePage {
             getLog().info("Catalog page was displayed");
             return true;
         } catch (NoSuchElementException e) {
-            getLog().trace("Catalog page was not displayed");
+            getLog().warn("Catalog page was not displayed");
             return false;
         }
     }
