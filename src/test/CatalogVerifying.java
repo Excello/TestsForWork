@@ -5,53 +5,55 @@ import pages.*;
 
 /**
  * Created by Englich on 11.11.2017.
- *
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        //final By identifyElementLocatorCatalog = By.cssSelector(".catalog-navigation__title");
-        final By identifyElementLocatorCatalogProducts = By.cssSelector(".schema-header__title");
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"),driver );
-        MobilePage mobilePage = new MobilePage(identifyElementLocatorCatalogProducts, driver);
-        TiresPage tiresPage = new TiresPage(identifyElementLocatorCatalogProducts, driver);
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"), driver);
 
-        BicyclePage bicyclePage = new BicyclePage(identifyElementLocatorCatalogProducts, driver);
         //TODO Убрать. Класс для того и сделан абстрактным, чтобы не создавать его
-        /*BaseCatalogProductsPage baseCatalogProductsPage = new BaseCatalogProductsPage(By.cssSelector(".schema-header__title"), driver) {
-            @Override
-            public boolean isPageOpened() {
-                return super.isPageOpened();
-            }
-        };*/
+        BaseCatalogProductsPage page;
         catalogNavigatorPage.isPageOpened();
         switch (pageName) {
-            case "BicyclePage" : catalogNavigatorPage.goToBicyclePage();
+            case "BicyclePage":
+                page = catalogNavigatorPage.goToBicyclePage();
                 break;
-            case "VideoCardPage" : catalogNavigatorPage.goToVideoCardPage();
+            case "VideoCardPage":
+                page = catalogNavigatorPage.goToVideoCardPage();
                 break;
-            case "HeadphonesPage" : catalogNavigatorPage.goToHeadphonesPage();
+            case "HeadphonesPage":
+                page = catalogNavigatorPage.goToHeadphonesPage();
                 break;
-            case "StrollersPage" : catalogNavigatorPage.goToStrollersPage();
+            case "StrollersPage":
+                page = catalogNavigatorPage.goToStrollersPage();
                 break;
-            case "MobilePage" : catalogNavigatorPage.goToMobilePage();
+            case "MobilePage":
+                page = catalogNavigatorPage.goToMobilePage();
                 break;
-            case "NotebookPage" : catalogNavigatorPage.goToNotebookPage();
+            case "NotebookPage":
+                page = catalogNavigatorPage.goToNotebookPage();
                 break;
-            case "PhotoPage" : catalogNavigatorPage.goToPhotoPage();
+            case "PhotoPage":
+                page = catalogNavigatorPage.goToPhotoPage();
                 break;
-            case "MotorOilPage" : catalogNavigatorPage.goToMotorOilPage();
+            case "MotorOilPage":
+                page = catalogNavigatorPage.goToMotorOilPage();
                 break;
-            case "TabletPcPage" : catalogNavigatorPage.goToTabletPcPage();
+            case "TabletPcPage":
+                page = catalogNavigatorPage.goToTabletPcPage();
                 break;
-            case "TiresPage" : catalogNavigatorPage.goToTiresPage();
+            case "TiresPage":
+                page = catalogNavigatorPage.goToTiresPage();
                 break;
-            case "SmartWatchPage" : catalogNavigatorPage.goToSmartWatchPage();
+            case "SmartWatchPage":
+                page = catalogNavigatorPage.goToSmartWatchPage();
                 break;
+            default:
+                throw new UnsupportedOperationException();
         }
-        mobilePage.isPageOpened();
-        baseCatalogProductsPage.isAnyFilterExisted();
-        baseCatalogProductsPage.isFilterSectionDisplayed();
-        baseCatalogProductsPage.isProductsDisplayed();
+        page.isPageOpened();
+        page.isProductsDisplayed();
+        page.isFilterSectionDisplayed();
+        page.isAnyFilterExisted();
     }
 
     @Test(priority = 1)
@@ -100,7 +102,9 @@ public class CatalogVerifying extends TestData {
     }
 
     @Test(priority = 10)
-    public void TiresPageTest() { checkCatalogs("TiresPage"); }
+    public void TiresPageTest() {
+        checkCatalogs("TiresPage");
+    }
 
     @Test(priority = 11)
     public void SmartWatchPage() {
