@@ -16,7 +16,7 @@ public abstract class BaseCatalogProductsPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
-    @Override
+    @Override//TODO Вот этот метод можно же залить просто в BasePage, нет?
     public boolean isPageOpened() {
         try {
             WebElement pageTitle = getDriver().findElement(getIdentifyElementLocator());

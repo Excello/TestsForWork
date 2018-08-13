@@ -10,7 +10,6 @@ public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
         CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"), driver);
 
-        //TODO Убрать. Класс для того и сделан абстрактным, чтобы не создавать его
         BaseCatalogProductsPage page;
         catalogNavigatorPage.isPageOpened();
         switch (pageName) {

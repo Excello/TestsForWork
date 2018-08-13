@@ -26,6 +26,7 @@ public class CatalogNavigatorPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
+    //TODO Зачем здесь переопределять?
     @Override
     public boolean isPageOpened() {
         try {
