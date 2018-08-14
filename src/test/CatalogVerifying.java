@@ -8,7 +8,7 @@ import pages.*;
  */
 public class CatalogVerifying extends TestData {
     private void checkCatalogs(String pageName) {
-        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation__title"), driver);
+        CatalogNavigatorPage catalogNavigatorPage = new CatalogNavigatorPage(By.cssSelector(".catalog-navigation"), getDriver());
 
         BaseCatalogProductsPage page;
         catalogNavigatorPage.isPageOpened();

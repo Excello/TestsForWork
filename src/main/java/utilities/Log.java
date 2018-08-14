@@ -5,14 +5,6 @@ import org.apache.log4j.Logger;
 public class Log {
     private Logger log = Logger.getLogger(Log.class.getName());
 
-   /* public void startLog(String testClassName) {
-        Log.info("Test is Starting...");
-    }
-
-    public void endLog(String testClassName) {
-        Log.info("Test is Ending...");
-    }*/
-
     public void info(String message) {
         log.info(message);
     }

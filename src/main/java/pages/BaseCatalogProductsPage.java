@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public abstract class BaseCatalogProductsPage extends BasePage {
@@ -16,18 +15,8 @@ public abstract class BaseCatalogProductsPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
-    @Override//TODO Вот этот метод можно же залить просто в BasePage, нет?
-    public boolean isPageOpened() {
-        try {
-            WebElement pageTitle = getDriver().findElement(getIdentifyElementLocator());
-            Assert.assertTrue(pageTitle.isDisplayed());
-            getLog().info("Page was displayed");
-            return true;
-        } catch (NoSuchElementException e) {
-            getLog().warn("Page was not displayed");
-            return false;
-        }
-    }
+    //TODO Вот этот метод можно же залить просто в BasePage, нет? - done
+
 
     public BaseCatalogProductsPage isProductsDisplayed() {
         try {

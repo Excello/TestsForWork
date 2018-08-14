@@ -1,10 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 /**
  * Created by Englich on 11.11.2017.
@@ -26,19 +23,7 @@ public class CatalogNavigatorPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
-    //TODO Зачем здесь переопределять?
-    @Override
-    public boolean isPageOpened() {
-        try {
-            WebElement pageTitle = getDriver().findElement(By.cssSelector(".catalog-navigation__title"));
-            Assert.assertTrue(pageTitle.getText().contains("Каталог"));
-            getLog().info("Catalog page was displayed");
-            return true;
-        } catch (NoSuchElementException e) {
-            getLog().warn("Catalog page was not displayed");
-            return false;
-        }
-    }
+    //TODO Зачем здесь переопределять? - done
 
     public MobilePage goToMobilePage() {
         getDriver().findElement(MOBILE_PAGE_TAB).click();

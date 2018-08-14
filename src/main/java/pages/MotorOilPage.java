@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Englich on 11.11.2017.
+ *
  */
 public class MotorOilPage extends BaseCatalogProductsPage {
-    public MotorOilPage(By identifyElementLocator, WebDriver d) {
+   public MotorOilPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }

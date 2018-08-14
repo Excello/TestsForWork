@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Englich on 11.11.2017.
+ *
  */
 public class PhotoPage extends BaseCatalogProductsPage {
-    public PhotoPage(By identifyElementLocator, WebDriver d) {
+   public PhotoPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }
 }
