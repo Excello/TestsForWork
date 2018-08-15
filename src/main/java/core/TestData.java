@@ -2,9 +2,10 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import utilities.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,23 +14,23 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestData {
     private WebDriver driver = null;
-    private Log log = new Log();
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
     private static final String URL_MAIN_PAGE = "https://catalog.onliner.by/";
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
         return driver;
     }
 
-    public void setDriver(WebDriver driver) {
+    private void setDriver(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void initDriver(WebDriver driver) {
-        log.info("Start WebDriver");
+    private void initDriver(WebDriver driver) {
+        LOGGER.info("Start WebDriver");
         setDriver(driver);
     }
 
-    public void stopDriver() {
-        log.info("Stop WebDriver");
+    private void stopDriver() {
+        LOGGER.info("Stop WebDriver");
         driver.quit();
     }
 

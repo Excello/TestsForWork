@@ -10,7 +10,6 @@ public abstract class BaseCatalogProductsPage extends BasePage {
     private static final By COMMON_CATALOG_FILTERS = By.id("schema-filter");
     private static final By COMMON_CATALOG_PAGE_ANY_FILTER = By.cssSelector(".schema-filter__fieldset");
 
-
     public BaseCatalogProductsPage(By identifyElementLocator, WebDriver d) {
         super(identifyElementLocator, d);
     }

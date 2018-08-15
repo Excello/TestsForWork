@@ -8,6 +8,6 @@ import org.openqa.selenium.WebDriver;
  */
 public class VideoCardPage extends BaseCatalogProductsPage {
     public VideoCardPage(By identifyElementLocator, WebDriver d) {
-        super(identifyElementLocator, d);
+        super(identifyElementLocator = By.cssSelector("asd"), d);
     }
 }
