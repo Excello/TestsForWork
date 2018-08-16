@@ -14,9 +14,6 @@ public abstract class BaseCatalogProductsPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
-    //TODO Вот этот метод можно же залить просто в BasePage, нет? - done
-
-
     public BaseCatalogProductsPage isProductsDisplayed() {
         try {
             Assert.assertTrue(getDriver().findElement(COMMON_CATALOG_PAGE_ITEMS).isDisplayed());

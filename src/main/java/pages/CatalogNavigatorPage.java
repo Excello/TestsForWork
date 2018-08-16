@@ -23,12 +23,10 @@ public class CatalogNavigatorPage extends BasePage {
         super(identifyElementLocator, d);
     }
 
-    //TODO Зачем здесь переопределять? - done
-
     public MobilePage goToMobilePage() {
         getDriver().findElement(MOBILE_PAGE_TAB).click();
         getLog().info("Mobile page is opening");
-        return new MobilePage(getIdentifyElementLocator(), getDriver());//TODO By.cssSelector(".schema-header__title") передается во все страницы = дублирование кода
+        return new MobilePage(getIdentifyElementLocator(), getDriver());
     }
 
     public TabletPcPage goToTabletPcPage() {
